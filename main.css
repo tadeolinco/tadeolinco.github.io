@@ -1,0 +1,33 @@
+html {
+  width: 100vw;
+  background-color: #1c1c1c;
+}
+
+body {
+  margin: auto;
+  max-width: 960px;
+  color: white;
+  font-family: 'Poppins';
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.logo {
+  padding: 10px 25px;
+  height: 53px;
+}
+
+.project {
+  display: inline-block;
+  width: 284px;
+  padding: 16px;
+  text-align: center;
+  vertical-align: top;
+}
