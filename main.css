@@ -9,6 +9,7 @@ body {
   color: white;
   font-family: 'Poppins';
   overflow-x: hidden;
+  padding: 0 10px;
 }
 
 h1 {
