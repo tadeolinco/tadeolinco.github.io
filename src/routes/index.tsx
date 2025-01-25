@@ -109,7 +109,7 @@ function RouteComponent() {
           transform: `rotateX(${rotations.x * (1 + 0.125 * 3)}deg) rotateY(${
             rotations.y * (1 + 0.125 * 3)
           }deg)`,
-          // boxShadow: "0 0 50px -20px #fff",
+          boxShadow: "0 0 80px -20px rgba(255, 255, 255, 0.75)",
         }}
       ></div>
       <div
