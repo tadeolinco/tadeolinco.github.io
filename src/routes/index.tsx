@@ -6,74 +6,8 @@ export const Route = createFileRoute("/")({
   component: RouteComponent,
 });
 
-// const SUBS = [
-//   { text: "New card.", duration: 2_000, ytOffset: 88 },
-//   { text: "What do you think?", duration: 3_000, ytOffset: 91 },
-//   { text: "Whoa-ho. Very nice.", duration: 2_000, ytOffset: 92 },
-//   { text: "Look at that.", duration: 2_000, ytOffset: 96 },
-//   {
-//     text: "Picked them up from the printers yesterday.",
-//     duration: 3_000,
-//     ytOffset: 97,
-//   },
-//   { text: "Good coloring", duration: 1_500, ytOffset: 99 },
-//   { text: "That's bone.", duration: 1_500, ytOffset: 99 },
-//   {
-//     text: "And the lettering is something called Silian Rail.",
-//     duration: 3_000,
-//     ytOffset: 100,
-//   },
-//   { text: "That's very cool, Bateman.", duration: 2_000, ytOffset: 105 },
-//   { text: "But that's nothing.", duration: 2_000, ytOffset: 105 },
-//   { text: "Look at this.", duration: 2_000, ytOffset: 107 },
-//   { text: "That is really nice", duration: 1_500, ytOffset: 108 },
-//   { text: "Eggshell with Romalian type", duration: 2_000, ytOffset: 109 },
-//   { text: "What do you think?", duration: 2_000, ytOffset: 113 },
-//   { text: "Nice.", duration: 500, ytOffset: 114 },
-//   { text: "Jesus, that is really super", duration: 1_500, ytOffset: 116 },
-//   {
-//     text: "How'd a nitwit like you get so tasteful?",
-//     duration: 3_000,
-//     ytOffset: 116,
-//   },
-//   {
-//     text: "But wait. You ain't seen nothing yet",
-//     duration: 3_000,
-//     ytOffset: 122,
-//   },
-//   {
-//     text: "Raised lettering, pale nimbus, white",
-//     duration: 4_000,
-//     ytOffset: 131,
-//   },
-//   { text: "Impressive", duration: 2_000, ytOffset: 137 },
-//   { text: "Very nice", duration: 2_000, ytOffset: 139 },
-//   { text: "Let's see Paul Allen's card", duration: 5_000, ytOffset: 142 },
-//   {
-//     text: "Look at that subtle off-white coloring.",
-//     duration: 2_000,
-//     ytOffset: 156,
-//   },
-//   { text: "The tasteful thickness of it.", duration: 2_000, ytOffset: 161 },
-//   {
-//     text: "Oh my god, it even has a watermark...",
-//     duration: 2_000,
-//     ytOffset: 164,
-//   },
-// ];
-
 function RouteComponent() {
   const [rotations, setRotations] = useState({ x: 0, y: 0 });
-
-  // const [currSubIndex, setCurrSubIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setCurrSubIndex((prev) => (prev + 1) % SUBS.length);
-  //   }, SUBS[currSubIndex].duration + 500);
-
-  //   return () => clearTimeout(timeout);
-  // }, [currSubIndex]);
 
   useEffect(() => {
     const callback = (event: MouseEvent) => {
@@ -100,9 +34,9 @@ function RouteComponent() {
 
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center bg-black relative">
-      <div className="bottom-0 absolute right-0 z-10 bg-black p-0.5">
-        <p className="text-xs text-white">
-          I don't work in film, I just enjoy watching
+      <div className="bottom-0 absolute right-0 z-10 bg-black p-1 rounded-tl-md">
+        <p className="text-xs text-gray-300 whitespace-pre-line">
+          I don't work in film, I just like it
         </p>
       </div>
 
@@ -190,14 +124,11 @@ function RouteComponent() {
           </div>
 
           <div>
-            <a
-              href="mailto:tadeolinco@gmail.com"
-              target="_blank"
-              role="button"
-              className="transition hover:underline"
-            >
-              tadeolinco@gmail.com
-            </a>
+            <Link to="/projects">
+              <a className="hover:underline" role="button">
+                Projects
+              </a>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col text-center">
@@ -212,24 +143,16 @@ function RouteComponent() {
           <p className="text-gray-900 text-lg italic">JS Frontend Engineer</p>
         </div>
         <div className="flex justify-center gap-2 text-center">
-          <Link to="/projects">
-            <a className="hover:underline" role="button">
-              Projects
-            </a>
-          </Link>
+          <a
+            href="mailto:tadeolinco@gmail.com"
+            target="_blank"
+            role="button"
+            className="transition hover:underline"
+          >
+            tadeolinco@gmail.com
+          </a>
         </div>
       </div>
-
-      {/* <p className="absolute bottom-4 left-0 right-0 text-center text-white">
-        <a
-          role="button"
-          className="hover:underline"
-          target="_blank"
-          href={`https://www.youtube.com/watch?v=_Jdvwiun9zY&t=${SUBS[currSubIndex]?.ytOffset}s`}
-        >
-          "{SUBS[currSubIndex].text}"
-        </a>
-      </p> */}
     </div>
   );
 }
