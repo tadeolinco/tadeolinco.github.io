@@ -209,14 +209,6 @@ function RouteComponent() {
           <a className="hover:underline" role="button">
             Projects
           </a>
-          <span>•</span>
-          <a className="hover:underline" role="button">
-            Projects
-          </a>
-          <span>•</span>
-          <a className="hover:underline" role="button">
-            Projects
-          </a>
         </div>
       </div>
 
