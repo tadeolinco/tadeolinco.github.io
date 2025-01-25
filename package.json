@@ -7,7 +7,8 @@
     "dev": "vite --port 3000",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "posters": "node --experimental-transform-types scripts/getFilmPosters.ts"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.97.3",
