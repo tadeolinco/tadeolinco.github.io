@@ -23,7 +23,7 @@ export function PosterRow(props: PosterRowProps) {
           <img
             src={`/posters/${uriSlug}/poster.jpg`}
             alt={film.name}
-            className="h-full w-full rounded-md object-cover hover:scale-110 transition-all duration-500 cursor-pointer grayscale hover:grayscale-0"
+            className="h-full w-full rounded-md object-cover hover:scale-110 transition-all duration-300 filter cursor-pointer blur-[2px] hover:blur-0 grayscale hover:grayscale-0"
           />
         </a>
       );
