@@ -11,6 +11,7 @@
     "posters": "node --experimental-transform-types scripts/getFilmPosters.ts"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@tanstack/react-router": "^1.97.3",
     "motion": "^11.18.1",
     "react": "^18.3.1",

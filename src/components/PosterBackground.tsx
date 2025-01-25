@@ -2,7 +2,15 @@ import { useEffect, useState } from "react";
 import baseFilms from "../baseFilms.json";
 import { PosterRow } from "./PosterRow";
 
-export function PosterBackground() {
+type PosterBackgroundProps = {
+  stopBlur: boolean;
+  stopGrayscale: boolean;
+};
+
+export function PosterBackground({
+  stopBlur,
+  stopGrayscale,
+}: PosterBackgroundProps) {
   const [rows, setRows] = useState(Math.ceil(window.innerHeight / 256) + 1);
 
   useEffect(() => {
@@ -28,6 +36,8 @@ export function PosterBackground() {
             key={index}
             startIndex={rowSplit * index}
             isReverse={index % 2 === 0}
+            stopBlur={stopBlur}
+            stopGrayscale={stopGrayscale}
           />
         ))}
       </div>

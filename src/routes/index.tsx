@@ -1,3 +1,4 @@
+import { Field, Label, Switch } from "@headlessui/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { PosterBackground } from "../components/PosterBackground";
@@ -7,6 +8,8 @@ export const Route = createFileRoute("/")({
 });
 
 function RouteComponent() {
+  const [stopBlur, setStopBlur] = useState(false);
+  const [stopGrayscale, setStopGrayscale] = useState(false);
   const [rotations, setRotations] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -39,8 +42,40 @@ function RouteComponent() {
           I don't work in film, I just like it
         </p>
       </div>
+      <div className="top-0 absolute right-0 z-10 bg-black p-2 rounded-bl-md">
+        <Field className="flex items-center">
+          <Switch
+            checked={stopBlur}
+            onChange={setStopBlur}
+            className="group relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 data-[checked]:bg-green-600"
+          >
+            <span
+              aria-hidden="true"
+              className="pointer-events-none inline-block size-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out group-data-[checked]:translate-x-4"
+            />
+          </Switch>
+          <Label as="span" className="ml-3 text-sm">
+            <span className="text-white text-xs">No blur</span>
+          </Label>
+        </Field>
+        <Field className="flex mt-2 items-center">
+          <Switch
+            checked={stopGrayscale}
+            onChange={setStopGrayscale}
+            className="group relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 data-[checked]:bg-blue-600"
+          >
+            <span
+              aria-hidden="true"
+              className="pointer-events-none inline-block size-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out group-data-[checked]:translate-x-4"
+            />
+          </Switch>
+          <Label as="span" className="ml-3 text-sm">
+            <span className="text-white text-xs">Grayscale</span>
+          </Label>
+        </Field>
+      </div>
 
-      <PosterBackground />
+      <PosterBackground stopBlur={stopBlur} stopGrayscale={stopGrayscale} />
       <div
         className="bg-green-500 absolute p-4 flex flex-col gap-10 rounded-3xl"
         style={{
