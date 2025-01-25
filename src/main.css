@@ -18,6 +18,15 @@ body {
   animation: marquee-reverse 300s linear infinite;
 }
 
+@media (prefers-reduced-motion) {
+  .marquee {
+    animation: none;
+  }
+  .marquee-reverse {
+    animation: none;
+  }
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
