@@ -33,8 +33,8 @@ import films from "../src/baseFilms.json" assert { type: "json" };
 
     images.forEach((imageUrl) => {
       const split = film.uri.split("/");
-      const path = `./src/posters/${split[split.length - 1]}/poster.jpg`;
-      fs.mkdirSync(`./src/posters/${split[split.length - 1]}`, {
+      const path = `./public/posters/${split[split.length - 1]}/poster.jpg`;
+      fs.mkdirSync(`./public/posters/${split[split.length - 1]}`, {
         recursive: true,
       });
       const file = fs.createWriteStream(path);
