@@ -109,6 +109,7 @@ function RouteComponent() {
           transform: `rotateX(${rotations.x * (1 + 0.125 * 3)}deg) rotateY(${
             rotations.y * (1 + 0.125 * 3)
           }deg)`,
+          // boxShadow: "0 0 50px -20px #fff",
         }}
       ></div>
       <div
@@ -132,14 +133,16 @@ function RouteComponent() {
         }}
       ></div>
       <div
-        className="bg-[#faf9f6] p-4 flex flex-col gap-10 rounded-md z-10 shadow-2xl"
+        className="bg-[#FAFAFA] p-4 flex flex-col gap-10 rounded-xl z-10"
         style={{
           width: 452,
           height: 232,
-          transform: `rotateX(${rotations.x * 0.5}deg) rotateY(${rotations.y * 0.5}deg)`,
+          // transform: `rotateX(${rotations.x * 0.5}deg) rotateY(${rotations.y * 0.5}deg)`,
+          // background: "url('/paper.webp')",
+          backgroundSize: "contain",
         }}
       >
-        <div className="flex gap-40 justify-between items-center">
+        <div className="flex justify-between items-center">
           <div className="flex gap-1">
             <a
               href="https://www.linkedin.com/in/tadeolinco/"
@@ -192,8 +195,15 @@ function RouteComponent() {
           </div>
         </div>
         <div className="flex flex-col text-center">
-          <p className="font-bold text-gray-900 text-3xl">Sam Bautista</p>
-          <p className="text-gray-900 text-xl">Frontend Engineer</p>
+          <div className="flex justify-center">
+            <div className="relative">
+              <p className="font-bold text-gray-900 z-10 text-3xl">
+                SA<span className="inline-block ml-[0.0625rem]">M</span>{" "}
+                BAUTISTA
+              </p>
+            </div>
+          </div>
+          <p className="text-gray-900 text-lg italic">Frontend Engineer</p>
         </div>
         <div className="flex justify-center gap-2 text-center">
           <a className="hover:underline" role="button">
@@ -209,6 +219,7 @@ function RouteComponent() {
           </a>
         </div>
       </div>
+
       {/* <p className="absolute bottom-4 left-0 right-0 text-center text-white">
         <a
           role="button"

@@ -1,232 +1,392 @@
 [
   {
-    "date": "2024-04-08",
-    "name": "Dune: Part Two",
-    "uri": "https://boxd.it/pUfA"
+    "Date": "2024-04-08",
+    "Name": "Dune: Part Two",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/pUfA"
   },
   {
-    "date": "2024-04-08",
-    "name": "Poor Things",
-    "uri": "https://boxd.it/tNWU"
+    "Date": "2024-04-08",
+    "Name": "Poor Things",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/tNWU"
   },
   {
-    "date": "2024-04-08",
-    "name": "Interstellar",
-    "uri": "https://boxd.it/4VZ8"
+    "Date": "2024-04-08",
+    "Name": "Interstellar",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/4VZ8"
   },
   {
-    "date": "2024-04-08",
-    "name": "Spider-Man: Across the Spider-Verse",
-    "uri": "https://boxd.it/kSz4"
+    "Date": "2024-04-08",
+    "Name": "Spider-Man: Across the Spider-Verse",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/kSz4"
   },
   {
-    "date": "2024-04-08",
-    "name": "Guardians of the Galaxy Vol. 3",
-    "uri": "https://boxd.it/fVNI"
+    "Date": "2024-04-08",
+    "Name": "Guardians of the Galaxy Vol. 3",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/fVNI"
   },
   {
-    "date": "2024-04-08",
-    "name": "Puss in Boots: The Last Wish",
-    "uri": "https://boxd.it/aaie"
+    "Date": "2024-04-08",
+    "Name": "Puss in Boots: The Last Wish",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/aaie"
   },
   {
-    "date": "2024-04-08",
-    "name": "Past Lives",
-    "uri": "https://boxd.it/oNB8"
+    "Date": "2024-04-08",
+    "Name": "Past Lives",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/oNB8"
   },
   {
-    "date": "2024-04-08",
-    "name": "Are You There God? It's Me, Margaret.",
-    "uri": "https://boxd.it/kiYC"
+    "Date": "2024-04-08",
+    "Name": "Are You There God? It's Me, Margaret.",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/kiYC"
   },
   {
-    "date": "2024-04-08",
-    "name": "Tenet",
-    "uri": "https://boxd.it/leq4"
+    "Date": "2024-04-08",
+    "Name": "Tenet",
+    "Year": 2020,
+    "Letterboxd URI": "https://boxd.it/leq4"
   },
   {
-    "date": "2024-04-08",
-    "name": "Baby Driver",
-    "uri": "https://boxd.it/bhF2"
+    "Date": "2024-04-08",
+    "Name": "Baby Driver",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/bhF2"
   },
   {
-    "date": "2024-04-09",
-    "name": "Everything Everywhere All at Once",
-    "uri": "https://boxd.it/jUk4"
+    "Date": "2024-04-09",
+    "Name": "Everything Everywhere All at Once",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/jUk4"
   },
   {
-    "date": "2024-04-09",
-    "name": "Top Gun: Maverick",
-    "uri": "https://boxd.it/cjr4"
+    "Date": "2024-04-09",
+    "Name": "Top Gun: Maverick",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/cjr4"
   },
   {
-    "date": "2024-04-09",
-    "name": "Inglourious Basterds",
-    "uri": "https://boxd.it/1JzG"
+    "Date": "2024-04-09",
+    "Name": "Inglourious Basterds",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1JzG"
   },
   {
-    "date": "2024-04-09",
-    "name": "Uncut Gems",
-    "uri": "https://boxd.it/gXGc"
+    "Date": "2024-04-09",
+    "Name": "Uncut Gems",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/gXGc"
   },
   {
-    "date": "2024-05-27",
-    "name": "Furiosa: A Mad Max Saga",
-    "uri": "https://boxd.it/tABk"
+    "Date": "2024-05-27",
+    "Name": "Furiosa: A Mad Max Saga",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/tABk"
   },
   {
-    "date": "2024-07-08",
-    "name": "How to Make Millions Before Grandma Dies",
-    "uri": "https://boxd.it/FLa4"
+    "Date": "2024-07-08",
+    "Name": "How to Make Millions Before Grandma Dies",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/FLa4"
   },
   {
-    "date": "2024-09-15",
-    "name": "Look Back",
-    "uri": "https://boxd.it/LjA6"
+    "Date": "2024-09-15",
+    "Name": "Look Back",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/LjA6"
   },
   {
-    "date": "2024-09-15",
-    "name": "Dungeons & Dragons: Honor Among Thieves",
-    "uri": "https://boxd.it/hN1A"
+    "Date": "2024-09-15",
+    "Name": "Dungeons & Dragons: Honor Among Thieves",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/hN1A"
   },
   {
-    "date": "2024-09-29",
-    "name": "The Wild Robot",
-    "uri": "https://boxd.it/IWFy"
+    "Date": "2024-09-29",
+    "Name": "The Wild Robot",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/IWFy"
   },
   {
-    "date": "2024-09-29",
-    "name": "The Shawshank Redemption",
-    "uri": "https://boxd.it/2aHi"
+    "Date": "2024-09-29",
+    "Name": "The Shawshank Redemption",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/2aHi"
   },
   {
-    "date": "2024-09-29",
-    "name": "The Dark Knight",
-    "uri": "https://boxd.it/2b0k"
+    "Date": "2024-09-29",
+    "Name": "The Dark Knight",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/2b0k"
   },
   {
-    "date": "2024-09-29",
-    "name": "Forrest Gump",
-    "uri": "https://boxd.it/728"
+    "Date": "2024-09-29",
+    "Name": "Forrest Gump",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/728"
   },
   {
-    "date": "2024-09-29",
-    "name": "Inception",
-    "uri": "https://boxd.it/1skk"
+    "Date": "2024-09-29",
+    "Name": "Inception",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1skk"
   },
   {
-    "date": "2024-09-29",
-    "name": "The Matrix",
-    "uri": "https://boxd.it/2a1m"
+    "Date": "2024-09-29",
+    "Name": "The Matrix",
+    "Year": 1999,
+    "Letterboxd URI": "https://boxd.it/2a1m"
   },
   {
-    "date": "2024-09-29",
-    "name": "Whiplash",
-    "uri": "https://boxd.it/7bQA"
+    "Date": "2024-09-29",
+    "Name": "Whiplash",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7bQA"
   },
   {
-    "date": "2024-09-29",
-    "name": "Django Unchained",
-    "uri": "https://boxd.it/2cCk"
+    "Date": "2024-09-29",
+    "Name": "Django Unchained",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/2cCk"
   },
   {
-    "date": "2024-11-02",
-    "name": "The Handmaiden",
-    "uri": "https://boxd.it/948A"
+    "Date": "2024-11-02",
+    "Name": "The Handmaiden",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/948A"
   },
   {
-    "date": "2024-11-05",
-    "name": "12 Angry Men",
-    "uri": "https://boxd.it/2auI"
+    "Date": "2024-11-05",
+    "Name": "12 Angry Men",
+    "Year": 1957,
+    "Letterboxd URI": "https://boxd.it/2auI"
   },
   {
-    "date": "2025-01-19",
-    "name": "The Count of Monte Cristo",
-    "uri": "https://boxd.it/F1Nk"
+    "Date": "2025-01-19",
+    "Name": "The Count of Monte Cristo",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/F1Nk"
   },
   {
-    "date": "2025-01-19",
-    "name": "Treasure Planet",
-    "uri": "https://boxd.it/1Znm"
+    "Date": "2025-01-19",
+    "Name": "Treasure Planet",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/1Znm"
   },
   {
-    "date": "2025-01-19",
-    "name": "Lilo & Stitch",
-    "uri": "https://boxd.it/1TAY"
+    "Date": "2025-01-19",
+    "Name": "Lilo & Stitch",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/1TAY"
   },
   {
-    "date": "2025-01-19",
-    "name": "Atlantis: The Lost Empire",
-    "uri": "https://boxd.it/1Vck"
+    "Date": "2025-01-19",
+    "Name": "Atlantis: The Lost Empire",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/1Vck"
   },
   {
-    "date": "2025-01-19",
-    "name": "Pirates of the Caribbean: The Curse of the Black Pearl",
-    "uri": "https://boxd.it/70G"
+    "Date": "2025-01-19",
+    "Name": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/70G"
   },
   {
-    "date": "2025-01-19",
-    "name": "Brother Bear",
-    "uri": "https://boxd.it/1Xjs"
+    "Date": "2025-01-19",
+    "Name": "Brother Bear",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/1Xjs"
   },
   {
-    "date": "2025-01-19",
-    "name": "The Incredibles",
-    "uri": "https://boxd.it/1XLm"
+    "Date": "2025-01-19",
+    "Name": "The Incredibles",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/1XLm"
   },
   {
-    "date": "2025-01-19",
-    "name": "Meet the Robinsons",
-    "uri": "https://boxd.it/28Ym"
+    "Date": "2025-01-19",
+    "Name": "Meet the Robinsons",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/28Ym"
   },
   {
-    "date": "2025-01-19",
-    "name": "WALL·E",
-    "uri": "https://boxd.it/1VEo"
+    "Date": "2025-01-19",
+    "Name": "WALL·E",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1VEo"
   },
   {
-    "date": "2025-01-19",
-    "name": "Up",
-    "uri": "https://boxd.it/1OEc"
+    "Date": "2025-01-19",
+    "Name": "Up",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1OEc"
   },
   {
-    "date": "2025-01-19",
-    "name": "John Carter",
-    "uri": "https://boxd.it/FQ2"
+    "Date": "2025-01-19",
+    "Name": "John Carter",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/FQ2"
   },
   {
-    "date": "2025-01-19",
-    "name": "Jumanji",
-    "uri": "https://boxd.it/1ZLI"
+    "Date": "2025-01-19",
+    "Name": "Jumanji",
+    "Year": 1995,
+    "Letterboxd URI": "https://boxd.it/1ZLI"
   },
   {
-    "date": "2025-01-19",
-    "name": "Scott Pilgrim vs. the World",
-    "uri": "https://boxd.it/1Aq6"
+    "Date": "2025-01-19",
+    "Name": "Scott Pilgrim vs. the World",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1Aq6"
   },
   {
-    "date": "2025-01-19",
-    "name": "School of Rock",
-    "uri": "https://boxd.it/28xK"
+    "Date": "2025-01-19",
+    "Name": "School of Rock",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/28xK"
   },
   {
-    "date": "2025-01-19",
-    "name": "Tropic Thunder",
-    "uri": "https://boxd.it/20WM"
+    "Date": "2025-01-19",
+    "Name": "Tropic Thunder",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/20WM"
   },
   {
-    "date": "2025-01-19",
-    "name": "The Terminal",
-    "uri": "https://boxd.it/2a2O"
+    "Date": "2025-01-19",
+    "Name": "The Terminal",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/2a2O"
   },
   {
-    "date": "2025-01-19",
-    "name": "Moulin Rouge!",
-    "uri": "https://boxd.it/29wI"
+    "Date": "2025-01-19",
+    "Name": "Moulin Rouge!",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/29wI"
   },
   {
-    "date": "2025-01-19",
-    "name": "The Mitchells vs. the Machines",
-    "uri": "https://boxd.it/i7xm"
+    "Date": "2025-01-19",
+    "Name": "The Mitchells vs. the Machines",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/i7xm"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Anora",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/Egcw"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Dune",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/fA7G"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Parasite",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/hTha"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "The Lighthouse",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/icFU"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Alita: Battle Angel",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/e0rS"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Spider-Man: Into the Spider-Verse",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/azpY"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Lady Bird",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/dGNE"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "The Lego Movie",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/4pDO"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "The Wolf of Wall Street",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/3C1m"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Moneyball",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/glS"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "The Social Network",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/17ue"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Fantastic Mr. Fox",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1WyQ"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Juno",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/210a"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Nacho Libre",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/1YTG"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Oldboy",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/29R2"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Catch Me If You Can",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/29VS"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "The Emperor's New Groove",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/1Tey"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "Fight Club",
+    "Year": 1999,
+    "Letterboxd URI": "https://boxd.it/2a9q"
+  },
+  {
+    "Date": "2025-01-26",
+    "Name": "The Fall",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/1NoM"
   }
 ]

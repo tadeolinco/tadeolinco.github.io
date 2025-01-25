@@ -25,6 +25,7 @@ export function PosterBackground() {
       <div className="flex flex-col -mt-[128px] gap-4">
         {Array.from({ length: rows }).map((_, index) => (
           <PosterRow
+            key={index}
             startIndex={rowSplit * index}
             isReverse={index % 2 === 0}
           />

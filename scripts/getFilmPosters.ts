@@ -7,13 +7,30 @@ import films from "../src/baseFilms.json" assert { type: "json" };
   const browser = await playwright.chromium.launch();
   const page = await browser.newPage();
 
+  const noPosters: string[] = [];
+
   for (let i = 0; i < films.length; i++) {
     const film = films[i];
-    await page.goto(film.uri, { waitUntil: "domcontentloaded" });
-    await page.waitForURL("**/film/**", { waitUntil: "domcontentloaded" });
-    await page.waitForTimeout(3000);
 
-    console.log(`${film.name} (${i + 1} of ${films.length})`);
+    const split = film["Letterboxd URI"].split("/");
+    const path = `./public/posters/${split[split.length - 1]}/poster.jpg`;
+
+    console.log(`${film["Name"]} (${i + 1} of ${films.length})`);
+
+    if (fs.existsSync(path)) {
+      console.log(`${film["Name"]} already exists`);
+      continue;
+    }
+
+    await page.goto(film["Letterboxd URI"], {
+      waitUntil: "domcontentloaded",
+      timeout: 0,
+    });
+    await page.waitForURL("**/film/**", {
+      waitUntil: "domcontentloaded",
+      timeout: 0,
+    });
+    await page.waitForTimeout(3000);
 
     const images = await page.$$eval(
       "#js-poster-col .film-poster.poster img",
@@ -32,7 +49,7 @@ import films from "../src/baseFilms.json" assert { type: "json" };
     );
 
     images.forEach((imageUrl) => {
-      const split = film.uri.split("/");
+      const split = film["Letterboxd URI"].split("/");
       const path = `./public/posters/${split[split.length - 1]}/poster.jpg`;
       fs.mkdirSync(`./public/posters/${split[split.length - 1]}`, {
         recursive: true,
@@ -42,7 +59,15 @@ import films from "../src/baseFilms.json" assert { type: "json" };
         response.pipe(file);
       });
     });
-    console.log(images);
+    if (images.length === 0) {
+      noPosters.push(film["Name"]);
+    }
   }
+
+  if (noPosters.length > 0) {
+    console.log("No posters found for the following films:");
+    console.log(JSON.stringify(noPosters, null, 2));
+  }
+
   await browser.close();
 })();

@@ -6,6 +6,10 @@
   min-height: 100dvh;
 }
 
+body {
+  font-family: "Fira Code", serif;
+}
+
 .marquee {
   animation: marquee 300s linear infinite;
 }
