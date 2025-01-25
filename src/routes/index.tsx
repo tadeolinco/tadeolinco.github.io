@@ -39,7 +39,19 @@ function RouteComponent() {
     <div className="min-h-dvh flex flex-col items-center justify-center bg-black relative">
       <div className="bottom-0 absolute right-0 z-10 bg-black p-1 rounded-tl-md">
         <p className="text-xs text-gray-300 whitespace-pre-line">
-          I don't work in film, I just like it
+          I don't work in film, ah.
+        </p>
+      </div>
+      <div className="bottom-0 absolute left-0 z-10 bg-black p-1 rounded-tr-md">
+        <p className="text-xs text-gray-300 whitespace-pre-line">
+          Posters from{" "}
+          <a
+            href="https://www.themoviedb.org/"
+            className="underline"
+            target="_blank"
+          >
+            TMDb
+          </a>
         </p>
       </div>
       <div className="top-0 absolute right-0 z-10 bg-black p-2 rounded-bl-md">
