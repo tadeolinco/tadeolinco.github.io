@@ -99,7 +99,13 @@ function RouteComponent() {
   }, []);
 
   return (
-    <div className="min-h-dvh flex flex-col items-center justify-center bg-black">
+    <div className="min-h-dvh flex flex-col items-center justify-center bg-black relative">
+      <div className="bottom-0 absolute right-0 z-10 bg-black p-0.5">
+        <p className="text-xs text-white">
+          I don't work in film, I just enjoy watching
+        </p>
+      </div>
+
       <PosterBackground />
       <div
         className="bg-green-500 absolute p-4 flex flex-col gap-10 rounded-3xl"
@@ -203,7 +209,7 @@ function RouteComponent() {
               </p>
             </div>
           </div>
-          <p className="text-gray-900 text-lg italic">Frontend Engineer</p>
+          <p className="text-gray-900 text-lg italic">JS Frontend Engineer</p>
         </div>
         <div className="flex justify-center gap-2 text-center">
           <Link to="/projects">
