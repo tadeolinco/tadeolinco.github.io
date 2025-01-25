@@ -1,103 +1,102 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
 });
 
-const SUBS = [
-  { text: "New card.", duration: 2_000, ytOffset: 88 },
-  { text: "What do you think?", duration: 3_000, ytOffset: 91 },
-  { text: "Whoa-ho. Very nice.", duration: 2_000, ytOffset: 92 },
-  { text: "Look at that.", duration: 2_000, ytOffset: 96 },
-  {
-    text: "Picked them up from the printers yesterday.",
-    duration: 3_000,
-    ytOffset: 97,
-  },
-  { text: "Good coloring", duration: 1_500, ytOffset: 99 },
-  { text: "That's bone.", duration: 1_500, ytOffset: 99 },
-  {
-    text: "And the lettering is something called Silian Rail.",
-    duration: 3_000,
-    ytOffset: 100,
-  },
-  { text: "That's very cool, Bateman.", duration: 2_000, ytOffset: 105 },
-  { text: "But that's nothing.", duration: 2_000, ytOffset: 105 },
-  { text: "Look at this.", duration: 2_000, ytOffset: 107 },
-  { text: "That is really nice", duration: 1_500, ytOffset: 108 },
-  { text: "Eggshell with Romalian type", duration: 2_000, ytOffset: 109 },
-  { text: "What do you think?", duration: 2_000, ytOffset: 113 },
-  { text: "Nice.", duration: 500, ytOffset: 114 },
-  { text: "Jesus, that is really super", duration: 1_500, ytOffset: 116 },
-  {
-    text: "How'd a nitwit like you get so tasteful?",
-    duration: 3_000,
-    ytOffset: 116,
-  },
-  {
-    text: "But wait. You ain't seen nothing yet",
-    duration: 3_000,
-    ytOffset: 122,
-  },
-  {
-    text: "Raised lettering, pale nimbus, white",
-    duration: 4_000,
-    ytOffset: 131,
-  },
-  { text: "Impressive", duration: 2_000, ytOffset: 137 },
-  { text: "Very nice", duration: 2_000, ytOffset: 139 },
-  { text: "Let's see Paul Allen's card", duration: 5_000, ytOffset: 142 },
-  {
-    text: "Look at that subtle off-white coloring.",
-    duration: 2_000,
-    ytOffset: 156,
-  },
-  { text: "The tasteful thickness of it.", duration: 2_000, ytOffset: 161 },
-  {
-    text: "Oh my god, it even has a watermark...",
-    duration: 2_000,
-    ytOffset: 164,
-  },
-];
+// const SUBS = [
+//   { text: "New card.", duration: 2_000, ytOffset: 88 },
+//   { text: "What do you think?", duration: 3_000, ytOffset: 91 },
+//   { text: "Whoa-ho. Very nice.", duration: 2_000, ytOffset: 92 },
+//   { text: "Look at that.", duration: 2_000, ytOffset: 96 },
+//   {
+//     text: "Picked them up from the printers yesterday.",
+//     duration: 3_000,
+//     ytOffset: 97,
+//   },
+//   { text: "Good coloring", duration: 1_500, ytOffset: 99 },
+//   { text: "That's bone.", duration: 1_500, ytOffset: 99 },
+//   {
+//     text: "And the lettering is something called Silian Rail.",
+//     duration: 3_000,
+//     ytOffset: 100,
+//   },
+//   { text: "That's very cool, Bateman.", duration: 2_000, ytOffset: 105 },
+//   { text: "But that's nothing.", duration: 2_000, ytOffset: 105 },
+//   { text: "Look at this.", duration: 2_000, ytOffset: 107 },
+//   { text: "That is really nice", duration: 1_500, ytOffset: 108 },
+//   { text: "Eggshell with Romalian type", duration: 2_000, ytOffset: 109 },
+//   { text: "What do you think?", duration: 2_000, ytOffset: 113 },
+//   { text: "Nice.", duration: 500, ytOffset: 114 },
+//   { text: "Jesus, that is really super", duration: 1_500, ytOffset: 116 },
+//   {
+//     text: "How'd a nitwit like you get so tasteful?",
+//     duration: 3_000,
+//     ytOffset: 116,
+//   },
+//   {
+//     text: "But wait. You ain't seen nothing yet",
+//     duration: 3_000,
+//     ytOffset: 122,
+//   },
+//   {
+//     text: "Raised lettering, pale nimbus, white",
+//     duration: 4_000,
+//     ytOffset: 131,
+//   },
+//   { text: "Impressive", duration: 2_000, ytOffset: 137 },
+//   { text: "Very nice", duration: 2_000, ytOffset: 139 },
+//   { text: "Let's see Paul Allen's card", duration: 5_000, ytOffset: 142 },
+//   {
+//     text: "Look at that subtle off-white coloring.",
+//     duration: 2_000,
+//     ytOffset: 156,
+//   },
+//   { text: "The tasteful thickness of it.", duration: 2_000, ytOffset: 161 },
+//   {
+//     text: "Oh my god, it even has a watermark...",
+//     duration: 2_000,
+//     ytOffset: 164,
+//   },
+// ];
 
 function RouteComponent() {
-  const [rotations, setRotations] = useState({ x: 0, y: 0 });
+  // const [rotations, setRotations] = useState({ x: 0, y: 0 });
 
-  const [currSubIndex, setCurrSubIndex] = useState(0);
+  // const [currSubIndex, setCurrSubIndex] = useState(0);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setCurrSubIndex((prev) => prev + 1);
-    }, SUBS[currSubIndex].duration + 500);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setCurrSubIndex((prev) => prev + 1);
+  //   }, SUBS[currSubIndex].duration + 500);
 
-    return () => clearTimeout(timeout);
-  }, [currSubIndex]);
+  //   return () => clearTimeout(timeout);
+  // }, [currSubIndex]);
 
-  useEffect(() => {
-    const callback = (event: MouseEvent) => {
-      const maxRotation = 20;
+  // useEffect(() => {
+  //   const callback = (event: MouseEvent) => {
+  //     const maxRotation = 20;
 
-      const x = event.x;
-      const y = event.y;
+  //     const x = event.x;
+  //     const y = event.y;
 
-      const containerWidth = window.innerWidth;
-      const containerHeight = window.innerHeight;
+  //     const containerWidth = window.innerWidth;
+  //     const containerHeight = window.innerHeight;
 
-      setRotations({
-        y: ((x - containerWidth / 2) / containerWidth) * maxRotation,
-        x: ((y - containerHeight / 2) / containerHeight) * maxRotation,
-      });
-    };
+  //     setRotations({
+  //       y: ((x - containerWidth / 2) / containerWidth) * maxRotation,
+  //       x: ((y - containerHeight / 2) / containerHeight) * maxRotation,
+  //     });
+  //   };
 
-    window.addEventListener("mousemove", callback);
+  //   window.addEventListener("mousemove", callback);
 
-    return () => {
-      window.removeEventListener("mousemove", callback);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("mousemove", callback);
+  //   };
+  // }, []);
 
-  return null;
+  return <div>Sam Bautista</div>;
 
   // return (
   //   <div className="min-h-dvh flex flex-col items-center justify-center bg-black">
