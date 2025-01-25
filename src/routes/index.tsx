@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { PosterBackground } from "../components/PosterBackground";
 
@@ -206,9 +206,11 @@ function RouteComponent() {
           <p className="text-gray-900 text-lg italic">Frontend Engineer</p>
         </div>
         <div className="flex justify-center gap-2 text-center">
-          <a className="hover:underline" role="button">
-            Projects
-          </a>
+          <Link to="/projects">
+            <a className="hover:underline" role="button">
+              Projects
+            </a>
+          </Link>
         </div>
       </div>
 
