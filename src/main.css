@@ -5,3 +5,29 @@
 #root {
   min-height: 100dvh;
 }
+
+.marquee {
+  animation: marquee 300s linear infinite;
+}
+
+.marquee-reverse {
+  animation: marquee-reverse 300s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
