@@ -125,9 +125,10 @@ function RouteComponent() {
         return (
           <div
             key={index}
-            className="absolute p-4 flex flex-col gap-10 rounded-xl duration-300 ease-in-out border-2"
+            className="absolute p-4 flex flex-col gap-10 rounded-xl duration-300 ease-in-out border-2 mx-4"
             style={{
-              width: 452,
+              maxWidth: 452,
+              width: "calc(100% - 32px)",
               height: 232,
               transform: `rotateX(${rotations.x * 2}deg) rotateY(${
                 -rotations.y * 2
@@ -147,9 +148,10 @@ function RouteComponent() {
         );
       })}
       <div
-        className="p-4 flex duration-300 ease-in-out flex-col gap-10 rounded-xl border-2"
+        className="p-4 flex duration-300 ease-in-out flex-col gap-10 rounded-xl border-2 mx-4"
         style={{
-          width: 452,
+          maxWidth: 452,
+          width: "calc(100% - 32px)",
           height: 232,
           backgroundColor: `rgb(${palette[0]?.[0]}, ${palette[0]?.[1]}, ${palette[0]?.[2]})`,
           color: `rgb(${textColor[0]}, ${textColor[1]}, ${textColor[2]})`,
@@ -218,7 +220,7 @@ function RouteComponent() {
         <div className="flex flex-col text-center">
           <div className="flex justify-center">
             <div className="relative">
-              <p className="font-bold z-10 text-3xl">
+              <p className="font-bold z-10 text-3xl whitespace-pre">
                 SA<span className="inline-block ml-[0.0625rem]">M</span>{" "}
                 BAUTISTA
               </p>
