@@ -76,7 +76,16 @@ function RouteComponent() {
         className="absolute bg-black cursor-pointer select-none p-1"
         role="button"
         style={{ bottom: 50, zIndex: 9999 }}
-        onClick={() => setThickness(thickness + 1)}
+        onClick={() => {
+          if (thickness > 20) {
+            window.open(
+              "https://youtu.be/rC0HFwnK_5E?si=3nYzRDxDXdaqjVHD&t=156",
+              "_blank"
+            );
+          } else {
+            setThickness(thickness + 1);
+          }
+        }}
       >
         <p className="text-white text-xs whitespace-pre text-center">
           "The tasteful thickness of it"
