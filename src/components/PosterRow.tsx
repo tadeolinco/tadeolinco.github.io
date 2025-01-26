@@ -57,12 +57,21 @@ export const PosterRow = memo(
               onMouseEnter={(event) => {
                 const palette = colorThief.getPalette(
                   event.target as HTMLImageElement,
-                  5
+                  4
+                );
+                const mainColor = colorThief.getColor(
+                  event.target as HTMLImageElement
                 );
                 if (!palette || palette.length === 0) {
                   props.onChangePalette([[255, 255, 255]]);
                 } else {
-                  props.onChangePalette(palette);
+                  props.onChangePalette(
+                    [mainColor].concat(
+                      palette.filter((color) =>
+                        color.every((c, i) => c !== mainColor[i])
+                      )
+                    )
+                  );
                 }
               }}
             />

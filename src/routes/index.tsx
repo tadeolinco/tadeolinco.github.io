@@ -1,6 +1,6 @@
 import { Field, Label, Switch } from "@headlessui/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PosterBackground } from "../components/PosterBackground";
 import { findMostContrastingColor } from "../utils";
 
@@ -40,18 +40,33 @@ function RouteComponent() {
     };
   }, []);
 
-  const textColor: [number, number, number] =
-    palette[0]?.[0] * 0.299 +
-      palette[0]?.[1] * 0.587 +
-      palette[0]?.[2] * 0.114 >
-    186
-      ? [0, 0, 0]
-      : [255, 255, 255];
+  const { mostContrastingColor, textColor, secondaryColors } = useMemo(() => {
+    const textColor: [number, number, number] =
+      palette[0]?.[0] * 0.299 +
+        palette[0]?.[1] * 0.587 +
+        palette[0]?.[2] * 0.114 >
+      186
+        ? [0, 0, 0]
+        : [255, 255, 255];
 
-  const mostContrastingColor = findMostContrastingColor(
-    palette.slice(1),
-    textColor
-  );
+    const secondaryColors = palette.slice(1);
+
+    const mainColorTotal = palette[0]?.reduce((acc, curr) => acc + curr, 0);
+    const secondaryColorsNotNearMain = secondaryColors.filter((color) => {
+      const colorTotal = color.reduce((acc, curr) => acc + curr, 0);
+      if (Math.abs(mainColorTotal - colorTotal) > 75) {
+        return true;
+      }
+      return false;
+    });
+
+    const mostContrastingColor = findMostContrastingColor(
+      secondaryColorsNotNearMain,
+      textColor
+    );
+
+    return { mostContrastingColor, textColor, secondaryColors };
+  }, [palette]);
 
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center bg-black relative">
@@ -131,6 +146,8 @@ function RouteComponent() {
         onChangePalette={setPalette}
       />
       {Array.from({ length: thickness }).map((_, index, array) => {
+        const color = secondaryColors[(index + 1) % secondaryColors.length];
+
         return (
           <div
             key={index}
@@ -142,16 +159,20 @@ function RouteComponent() {
               transform: `rotateX(${rotations.x * 2}deg) rotateY(${
                 -rotations.y * 2
               }deg) translateZ(${(index + 1) * 10}px)`,
-              backgroundColor: `rgb(${palette[0]?.[0]}, ${palette[0]?.[1]}, ${palette[0]?.[2]})`,
               transitionProperty: "background-color, border-color",
               zIndex: array.length - index,
               boxShadow:
                 array.length - 1 === index
                   ? "rgba(0, 0, 0, 1) 0px 0px 100px 20px"
                   : "none",
+
+              backgroundColor: color
+                ? `rgb(${color[0]}, ${color[1]}, ${color[2]})`
+                : "white",
+
               borderColor: mostContrastingColor
                 ? `rgb(${mostContrastingColor[0]}, ${mostContrastingColor[1]}, ${mostContrastingColor[2]})`
-                : "transparent",
+                : "black",
             }}
           ></div>
         );
@@ -171,7 +192,7 @@ function RouteComponent() {
           zIndex: 1000,
           borderColor: mostContrastingColor
             ? `rgb(${mostContrastingColor[0]}, ${mostContrastingColor[1]}, ${mostContrastingColor[2]})`
-            : "transparent",
+            : "black",
         }}
         onMouseEnter={() => {
           setPalette([[255, 255, 255]]);
