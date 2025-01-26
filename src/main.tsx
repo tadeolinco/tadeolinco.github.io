@@ -5,6 +5,7 @@ import {
 } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { ReactTagManager } from "react-gtm-ts";
 import "unfonts.css";
 import "./main.css";
 
@@ -23,6 +24,12 @@ declare module "@tanstack/react-router" {
     router: typeof router;
   }
 }
+
+ReactTagManager.init({
+  code: "GTM-5D7BZ38N", // GTM Code
+  debug: false, // debug mode (default false)
+  performance: false, // starts GTM only after user interaction (improve initial page load)
+});
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

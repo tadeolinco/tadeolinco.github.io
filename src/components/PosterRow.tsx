@@ -1,5 +1,6 @@
 import ColorThief from "colorthief";
 import { memo, useRef } from "react";
+import { ReactTagManager } from "react-gtm-ts";
 import baseFilms from "../baseFilms.json";
 
 type PosterRowProps = {
@@ -45,6 +46,14 @@ export const PosterRow = memo(
             target="_blank"
             href={film["Letterboxd URI"]}
             className="w-40 block min-w-0 flex-shrink-0 h-60"
+            onClick={() => {
+              ReactTagManager.action({
+                event: "film_click",
+                data: {
+                  film: film["Name"],
+                },
+              });
+            }}
           >
             <img
               src={`/posters/${uriSlug}/poster.jpg`}
@@ -65,6 +74,12 @@ export const PosterRow = memo(
                 if (!palette || palette.length === 0) {
                   props.onChangePalette([[255, 255, 255]]);
                 } else {
+                  ReactTagManager.action({
+                    event: "film_hover",
+                    data: {
+                      film: film["Name"],
+                    },
+                  });
                   props.onChangePalette(
                     [mainColor].concat(
                       palette.filter((color) =>

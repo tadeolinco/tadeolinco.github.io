@@ -1,6 +1,7 @@
 import { Field, Label, Switch } from "@headlessui/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
+import { ReactTagManager } from "react-gtm-ts";
 import { PosterBackground } from "../components/PosterBackground";
 import { findMostContrastingColor } from "../utils";
 
@@ -97,8 +98,17 @@ function RouteComponent() {
               "https://youtu.be/rC0HFwnK_5E?si=3nYzRDxDXdaqjVHD&t=156",
               "_blank"
             );
+            ReactTagManager.action({
+              event: "thickness_redirect",
+            });
           } else {
             setThickness(thickness + 1);
+            ReactTagManager.action({
+              event: "thickness_click",
+              data: {
+                thickness: thickness,
+              },
+            });
           }
         }}
       >
@@ -111,7 +121,15 @@ function RouteComponent() {
         <Field className="flex items-center">
           <Switch
             checked={stopBlur}
-            onChange={setStopBlur}
+            onChange={() => {
+              setStopBlur(!stopBlur);
+              ReactTagManager.action({
+                event: "blur_click",
+                data: {
+                  blur: stopBlur,
+                },
+              });
+            }}
             className="group relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 data-[checked]:bg-green-600"
           >
             <span
@@ -126,7 +144,15 @@ function RouteComponent() {
         <Field className="flex mt-2 items-center">
           <Switch
             checked={stopGrayscale}
-            onChange={setStopGrayscale}
+            onChange={() => {
+              setStopGrayscale(!stopGrayscale);
+              ReactTagManager.action({
+                event: "grayscale_click",
+                data: {
+                  grayscale: stopGrayscale,
+                },
+              });
+            }}
             className="group relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 data-[checked]:bg-blue-600"
           >
             <span
@@ -205,6 +231,11 @@ function RouteComponent() {
               target="_blank"
               role="button"
               className="rounded-full p-1 hover:bg-gray-200"
+              onClick={() => {
+                ReactTagManager.action({
+                  event: "linkedin_click",
+                });
+              }}
             >
               <svg viewBox="0 0 24 24" role="presentation" className="w-6 h-6">
                 <path
@@ -218,6 +249,11 @@ function RouteComponent() {
               target="_blank"
               role="button"
               className="rounded-full p-1 hover:bg-gray-200"
+              onClick={() => {
+                ReactTagManager.action({
+                  event: "github_click",
+                });
+              }}
             >
               <svg viewBox="0 0 24 24" role="presentation" className="w-6 h-6">
                 <path
@@ -231,6 +267,11 @@ function RouteComponent() {
               target="_blank"
               role="button"
               className="rounded-full p-1 min-w-8 hover:bg-gray-200"
+              onClick={() => {
+                ReactTagManager.action({
+                  event: "letterboxd_click",
+                });
+              }}
             >
               <img
                 src="https://a.ltrbxd.com/logos/letterboxd-decal-dots-pos-rgb-500px.png"
@@ -241,7 +282,15 @@ function RouteComponent() {
 
           <div>
             <Link to="/projects">
-              <a className="hover:underline" role="button">
+              <a
+                className="hover:underline"
+                role="button"
+                onClick={() => {
+                  ReactTagManager.action({
+                    event: "projects_click",
+                  });
+                }}
+              >
                 Projects
               </a>
             </Link>
@@ -279,6 +328,11 @@ function RouteComponent() {
             target="_blank"
             role="button"
             className="hover:underline"
+            onClick={() => {
+              ReactTagManager.action({
+                event: "email_click",
+              });
+            }}
           >
             tadeolinco@gmail.com
           </a>
