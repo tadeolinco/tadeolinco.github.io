@@ -15,6 +15,7 @@ function RouteComponent() {
   const [palette, setPalette] = useState<[number, number, number][]>([
     [255, 255, 255],
   ]);
+  const [thickness, setThickness] = useState(3);
 
   useEffect(() => {
     const callback = (event: MouseEvent) => {
@@ -71,6 +72,17 @@ function RouteComponent() {
           </a>
         </p>
       </div>
+      <div
+        className="absolute bg-black cursor-pointer select-none p-1"
+        role="button"
+        style={{ bottom: "20%", zIndex: 9999 }}
+        onClick={() => setThickness(thickness + 1)}
+      >
+        <p className="text-white text-xs whitespace-pre text-center">
+          "The tasteful thickness of it"
+          <br />- Patrick Bateman, American Psycho (2000)
+        </p>
+      </div>
       <div className="top-0 absolute right-0 z-10 bg-black p-2 rounded-bl-md">
         <Field className="flex items-center">
           <Switch
@@ -109,7 +121,7 @@ function RouteComponent() {
         stopGrayscale={stopGrayscale}
         onChangePalette={setPalette}
       />
-      {Array.from({ length: 3 }).map((_, index, array) => {
+      {Array.from({ length: thickness }).map((_, index, array) => {
         return (
           <div
             key={index}

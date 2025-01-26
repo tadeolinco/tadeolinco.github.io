@@ -59,7 +59,11 @@ export const PosterRow = memo(
                   event.target as HTMLImageElement,
                   5
                 );
-                props.onChangePalette(palette);
+                if (!palette || palette.length === 0) {
+                  props.onChangePalette([[255, 255, 255]]);
+                } else {
+                  props.onChangePalette(palette);
+                }
               }}
             />
           </a>
