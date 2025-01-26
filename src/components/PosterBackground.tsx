@@ -5,11 +5,13 @@ import { PosterRow } from "./PosterRow";
 type PosterBackgroundProps = {
   stopBlur: boolean;
   stopGrayscale: boolean;
+  onChangePalette: (palette: [number, number, number][]) => void;
 };
 
 export function PosterBackground({
   stopBlur,
   stopGrayscale,
+  onChangePalette,
 }: PosterBackgroundProps) {
   const [rows, setRows] = useState(Math.ceil(window.innerHeight / 256) + 1);
 
@@ -38,6 +40,7 @@ export function PosterBackground({
             isReverse={index % 2 === 0}
             stopBlur={stopBlur}
             stopGrayscale={stopGrayscale}
+            onChangePalette={onChangePalette}
           />
         ))}
       </div>

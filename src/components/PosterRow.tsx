@@ -1,3 +1,4 @@
+import ColorThief from "colorthief";
 import { memo, useRef } from "react";
 import baseFilms from "../baseFilms.json";
 
@@ -6,6 +7,7 @@ type PosterRowProps = {
   isReverse: boolean;
   stopBlur: boolean;
   stopGrayscale: boolean;
+  onChangePalette: (palette: [number, number, number][]) => void;
 };
 
 function shuffleArray(array: (typeof baseFilms)[number][]) {
@@ -24,9 +26,10 @@ function shuffleArray(array: (typeof baseFilms)[number][]) {
   return clonedArray;
 }
 
+const colorThief = new ColorThief();
+
 export const PosterRow = memo(
   (props: PosterRowProps) => {
-    console.log(props);
     const films = useRef(shuffleArray(baseFilms));
 
     const renderFilms = films.current
@@ -51,6 +54,13 @@ export const PosterRow = memo(
                 (!props.stopBlur ? " blur-[2px] hover:blur-0" : "") +
                 (!props.stopGrayscale ? " grayscale hover:grayscale-0" : "")
               }
+              onMouseEnter={(event) => {
+                const palette = colorThief.getPalette(
+                  event.target as HTMLImageElement,
+                  7
+                );
+                props.onChangePalette(palette);
+              }}
             />
           </a>
         );
