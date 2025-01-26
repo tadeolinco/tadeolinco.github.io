@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "posters": "node --experimental-transform-types scripts/getFilmPosters.ts"
+    "convert": "node --experimental-transform-types scripts/convertCSVFilms.ts",
+    "posters": "node --experimental-transform-types scripts/getFilmPosters.ts",
+    "get-posters": "npm run convert && npm run posters"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -28,6 +30,7 @@
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "csvtojson": "^2.0.10",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
