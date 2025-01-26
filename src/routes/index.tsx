@@ -14,7 +14,6 @@ function RouteComponent() {
   const [rotations, setRotations] = useState({ x: 0, y: 0 });
   const [palette, setPalette] = useState<[number, number, number][]>([
     [255, 255, 255],
-    [0, 0, 0],
   ]);
 
   useEffect(() => {
@@ -55,11 +54,11 @@ function RouteComponent() {
 
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center bg-black relative">
-      <div className="bottom-0 absolute right-0 z-10 bg-black p-1 rounded-tl-md">
+      {/* <div className="bottom-0 absolute right-0 z-10 bg-black p-1 rounded-tl-md">
         <p className="text-xs text-gray-300 whitespace-pre-line">
           I don't work in film, ah.
         </p>
-      </div>
+      </div> */}
       <div className="bottom-0 absolute left-0 z-10 bg-black p-1 rounded-tr-md">
         <p className="text-xs text-gray-300 whitespace-pre-line">
           Posters from{" "}
@@ -110,35 +109,46 @@ function RouteComponent() {
         stopGrayscale={stopGrayscale}
         onChangePalette={setPalette}
       />
-      {/* {palette.slice(1).map((color, index, array) => {
-        const factor = array.length - index;
-
+      {Array.from({ length: 3 }).map((_, index, array) => {
         return (
           <div
-            className="absolute p-4 flex flex-col gap-10 rounded-3xl transition-all duration-300 ease-in-out"
+            key={index}
+            className="absolute p-4 flex flex-col gap-10 rounded-xl duration-300 ease-in-out border-2"
             style={{
-              width: 452 + factor * Math.abs(rotations.y),
-              height: 232 + factor * Math.abs(rotations.x),
-              transform: `rotateX(${rotations.x * (1 + 0.125 * factor)}deg) rotateY(${
-                rotations.y * (1 + 0.125 * factor)
-              }deg)`,
+              width: 452,
+              height: 232,
+              transform: `rotateX(${rotations.x * 2}deg) rotateY(${
+                -rotations.y * 2
+              }deg) translateZ(${(index + 1) * 10}px)`,
+              backgroundColor: `rgb(${palette[0]?.[0]}, ${palette[0]?.[1]}, ${palette[0]?.[2]})`,
+              transitionProperty: "background-color, border-color",
+              zIndex: array.length - index,
               boxShadow:
                 array.length - 1 === index
-                  ? "0 0 80px -20px rgba(255, 255, 255, 0.75)"
+                  ? "rgba(0, 0, 0, 1) 0px 0px 100px 20px"
                   : "none",
-              backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})`,
+              borderColor: mostContrastingColor
+                ? `rgb(${mostContrastingColor[0]}, ${mostContrastingColor[1]}, ${mostContrastingColor[2]})`
+                : "transparent",
             }}
           ></div>
         );
-      })} */}
+      })}
       <div
-        className="p-4 flex transition-all duration-300 ease-in-out flex-col gap-10 rounded-xl z-10"
+        className="p-4 flex duration-300 ease-in-out flex-col gap-10 rounded-xl border-2"
         style={{
           width: 452,
           height: 232,
           backgroundColor: `rgb(${palette[0]?.[0]}, ${palette[0]?.[1]}, ${palette[0]?.[2]})`,
           color: `rgb(${textColor[0]}, ${textColor[1]}, ${textColor[2]})`,
-          boxShadow: "rgba(0, 0, 0, 1) 0px 0px 90px 20px",
+          transform: `rotateX(${rotations.x * 2}deg) rotateY(${
+            -rotations.y * 2
+          }deg)`,
+          transitionProperty: "background-color, color, border-color",
+          zIndex: 1000,
+          borderColor: mostContrastingColor
+            ? `rgb(${mostContrastingColor[0]}, ${mostContrastingColor[1]}, ${mostContrastingColor[2]})`
+            : "transparent",
         }}
         onMouseEnter={() => {
           setPalette([[255, 255, 255]]);

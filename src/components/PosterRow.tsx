@@ -57,7 +57,7 @@ export const PosterRow = memo(
               onMouseEnter={(event) => {
                 const palette = colorThief.getPalette(
                   event.target as HTMLImageElement,
-                  7
+                  5
                 );
                 props.onChangePalette(palette);
               }}
