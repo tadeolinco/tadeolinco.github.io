@@ -1,9 +1,10 @@
 import { Field, Label, Switch } from "@headlessui/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { ReactTagManager } from "react-gtm-ts";
 import { PosterBackground } from "../components/PosterBackground";
 import { findMostContrastingColor } from "../utils";
+
+import mixpanel from "mixpanel-browser";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -98,16 +99,11 @@ function RouteComponent() {
               "https://youtu.be/rC0HFwnK_5E?si=3nYzRDxDXdaqjVHD&t=156",
               "_blank"
             );
-            ReactTagManager.action({
-              event: "thickness_redirect",
-            });
+            mixpanel.track("thickness_redirect");
           } else {
             setThickness(thickness + 1);
-            ReactTagManager.action({
-              event: "thickness_click",
-              data: {
-                thickness: thickness,
-              },
+            mixpanel.track("thickness_click", {
+              thickness: thickness,
             });
           }
         }}
@@ -123,11 +119,8 @@ function RouteComponent() {
             checked={stopBlur}
             onChange={() => {
               setStopBlur(!stopBlur);
-              ReactTagManager.action({
-                event: "blur_click",
-                data: {
-                  blur: stopBlur,
-                },
+              mixpanel.track("blur_click", {
+                stopBlur: !stopBlur,
               });
             }}
             className="group relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 data-[checked]:bg-green-600"
@@ -146,11 +139,8 @@ function RouteComponent() {
             checked={stopGrayscale}
             onChange={() => {
               setStopGrayscale(!stopGrayscale);
-              ReactTagManager.action({
-                event: "grayscale_click",
-                data: {
-                  grayscale: stopGrayscale,
-                },
+              mixpanel.track("grayscale_click", {
+                stopGrayscale: !stopGrayscale,
               });
             }}
             className="group relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 data-[checked]:bg-blue-600"
@@ -232,9 +222,7 @@ function RouteComponent() {
               role="button"
               className="rounded-full p-1 hover:bg-gray-200"
               onClick={() => {
-                ReactTagManager.action({
-                  event: "linkedin_click",
-                });
+                mixpanel.track("linkedin_click");
               }}
             >
               <svg viewBox="0 0 24 24" role="presentation" className="w-6 h-6">
@@ -250,9 +238,7 @@ function RouteComponent() {
               role="button"
               className="rounded-full p-1 hover:bg-gray-200"
               onClick={() => {
-                ReactTagManager.action({
-                  event: "github_click",
-                });
+                mixpanel.track("github_click");
               }}
             >
               <svg viewBox="0 0 24 24" role="presentation" className="w-6 h-6">
@@ -268,9 +254,7 @@ function RouteComponent() {
               role="button"
               className="rounded-full p-1 min-w-8 hover:bg-gray-200"
               onClick={() => {
-                ReactTagManager.action({
-                  event: "letterboxd_click",
-                });
+                mixpanel.track("letterboxd_click");
               }}
             >
               <img
@@ -286,9 +270,7 @@ function RouteComponent() {
                 className="hover:underline"
                 role="button"
                 onClick={() => {
-                  ReactTagManager.action({
-                    event: "projects_click",
-                  });
+                  mixpanel.track("projects_click");
                 }}
               >
                 Projects
@@ -329,9 +311,7 @@ function RouteComponent() {
             role="button"
             className="hover:underline"
             onClick={() => {
-              ReactTagManager.action({
-                event: "email_click",
-              });
+              mixpanel.track("email_click");
             }}
           >
             tadeolinco@gmail.com

@@ -1,6 +1,6 @@
 import ColorThief from "colorthief";
+import mixpanel from "mixpanel-browser";
 import { memo, useRef } from "react";
-import { ReactTagManager } from "react-gtm-ts";
 import baseFilms from "../baseFilms.json";
 
 type PosterRowProps = {
@@ -47,11 +47,8 @@ export const PosterRow = memo(
             href={film["Letterboxd URI"]}
             className="w-40 block min-w-0 flex-shrink-0 h-60"
             onClick={() => {
-              ReactTagManager.action({
-                event: "film_click",
-                data: {
-                  film: film["Name"],
-                },
+              mixpanel.track("film_click", {
+                film: film["Name"],
               });
             }}
           >
@@ -74,11 +71,8 @@ export const PosterRow = memo(
                 if (!palette || palette.length === 0) {
                   props.onChangePalette([[255, 255, 255]]);
                 } else {
-                  ReactTagManager.action({
-                    event: "film_hover",
-                    data: {
-                      film: film["Name"],
-                    },
+                  mixpanel.track("film_hover", {
+                    film: film["Name"],
                   });
                   props.onChangePalette(
                     [mainColor].concat(
