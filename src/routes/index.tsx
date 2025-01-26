@@ -80,7 +80,7 @@ function RouteComponent() {
       >
         <p className="text-white text-xs whitespace-pre text-center">
           "The tasteful thickness of it"
-          <br />- Patrick Bateman, American Psycho (2000)
+          <br />- American Psycho (2000)
         </p>
       </div>
       <div className="top-0 absolute right-0 z-10 bg-black p-2 rounded-bl-md">
