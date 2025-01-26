@@ -75,7 +75,7 @@ function RouteComponent() {
       <div
         className="absolute bg-black cursor-pointer select-none p-1"
         role="button"
-        style={{ bottom: "20%", zIndex: 9999 }}
+        style={{ bottom: 50, zIndex: 9999 }}
         onClick={() => setThickness(thickness + 1)}
       >
         <p className="text-white text-xs whitespace-pre text-center">
@@ -111,7 +111,7 @@ function RouteComponent() {
             />
           </Switch>
           <Label as="span" className="ml-3 text-sm">
-            <span className="text-white text-xs">Grayscale</span>
+            <span className="text-white text-xs">With color</span>
           </Label>
         </Field>
       </div>
