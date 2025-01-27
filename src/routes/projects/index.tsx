@@ -51,7 +51,7 @@ function RouteComponent() {
       <div className="flex flex-1 flex-col gap-4">
         {projects.map((project) => (
           <div
-            className="border border-neutral-700 flex flex-col bg-neutral-900 rounded-xl p-4 transition-all cursor-pointer duration-300 hover:scale-[101.25%]"
+            className="border border-neutral-700 flex flex-col bg-neutral-900 rounded-xl p-4 transition-all"
             style={{
               height: `${project.height / 35}%`,
             }}

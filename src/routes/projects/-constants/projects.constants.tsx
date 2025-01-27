@@ -38,7 +38,7 @@ export const PROJECTS: ProjectType[] = [
     image: "/images/dashboards.jpeg",
   },
   {
-    title: "Unravel Carbon - Export",
+    title: "Unravel Carbon - Chart Export",
     startDate: new Date("2024-01-15"),
     endDate: null,
     description: "Export built with React and TypeScript",
@@ -47,7 +47,7 @@ export const PROJECTS: ProjectType[] = [
     image: "/images/chart-export.gif",
   },
   {
-    title: "Unravel Carbon - Compare",
+    title: "Unravel Carbon - Compare Facilities",
     startDate: new Date("2024-01-15"),
     endDate: null,
     description: "Export built with React and TypeScript",
@@ -65,7 +65,7 @@ export const PROJECTS: ProjectType[] = [
     image: "/images/climate-program.jpeg",
   },
   {
-    title: "Unravel Carbon - Portfolio",
+    title: "Unravel Carbon - Portfolio Module",
     startDate: new Date("2024-01-15"),
     endDate: null,
     description: "Dashboard built with React and TypeScript",
@@ -74,7 +74,7 @@ export const PROJECTS: ProjectType[] = [
     image: "/images/portfolio.gif",
   },
   {
-    title: "Unravel Carbon - Data flow",
+    title: "Unravel Carbon - Data upload revamp",
     startDate: new Date("2024-01-15"),
     endDate: null,
     description: "Dashboard built with React and TypeScript",
@@ -101,7 +101,7 @@ export const PROJECTS: ProjectType[] = [
     image: "/images/ISSB.webp",
   },
   {
-    title: "Unravel Carbon - Assets",
+    title: "Unravel Carbon - Assets Management",
     startDate: new Date("2024-01-15"),
     endDate: null,
     description: "Dashboard built with React and TypeScript",
