@@ -1,5 +1,5 @@
 import {
-  createMemoryHistory,
+  createHashHistory,
   createRouter,
   RouterProvider,
 } from "@tanstack/react-router";
@@ -12,9 +12,7 @@ import "./main.css";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
-const memoryHistory = createMemoryHistory({
-  initialEntries: ["/"],
-});
+const memoryHistory = createHashHistory({});
 
 // Create a new router instance
 const router = createRouter({ routeTree, history: memoryHistory });
