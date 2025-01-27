@@ -131,7 +131,7 @@ function RouteComponent() {
             />
           </Switch>
           <Label as="span" className="ml-3 text-sm">
-            <span className="text-white text-xs">No blur</span>
+            <span className="text-white text-xs">Sharp</span>
           </Label>
         </Field>
         <Field className="flex mt-2 items-center">
@@ -151,7 +151,7 @@ function RouteComponent() {
             />
           </Switch>
           <Label as="span" className="ml-3 text-sm">
-            <span className="text-white text-xs">With color</span>
+            <span className="text-white text-xs">Color</span>
           </Label>
         </Field>
       </div>
