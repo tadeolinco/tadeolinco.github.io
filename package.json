@@ -10,13 +10,16 @@
     "preview": "vite preview",
     "convert": "node --experimental-transform-types scripts/convertCSVFilms.ts",
     "posters": "node --experimental-transform-types scripts/getFilmPosters.ts",
-    "get-posters": "npm run convert && npm run posters"
+    "sync-cloud": "node --experimental-transform-types scripts/syncCloudinary.ts",
+    "get-posters": "npm run convert && npm run posters && npm run sync-cloud"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@tanstack/react-router": "^1.97.3",
+    "cloudinary": "^2.5.1",
     "colorthief": "^2.6.0",
     "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
     "mixpanel-browser": "^2.59.0",
     "motion": "^11.18.1",
     "react": "^18.3.1",

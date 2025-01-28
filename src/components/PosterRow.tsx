@@ -2,6 +2,7 @@ import ColorThief from "colorthief";
 import mixpanel from "mixpanel-browser";
 import { memo, useRef } from "react";
 import baseFilms from "../baseFilms.json";
+import cdn from "../cdn.json";
 
 type PosterRowProps = {
   startIndex: number;
@@ -53,7 +54,8 @@ export const PosterRow = memo(
             }}
           >
             <img
-              src={`/posters/${uriSlug}/poster.jpg`}
+              // @ts-expect-error cannot type
+              src={cdn[`posters/${uriSlug}`]}
               alt={film["Name"]}
               className={
                 "h-full w-full rounded-md object-cover hover:scale-110 transition-all duration-300 filter cursor-pointer" +

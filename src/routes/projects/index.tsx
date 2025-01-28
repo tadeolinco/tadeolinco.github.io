@@ -1,6 +1,7 @@
 import { Button, Dialog, DialogPanel } from "@headlessui/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Fragment, useEffect, useMemo, useState } from "react";
+import cdn from "../../cdn.json";
 import { PROJECTS, ProjectType } from "./-constants/projects.constants";
 
 export const Route = createFileRoute("/projects/")({
@@ -71,7 +72,8 @@ function RouteComponent() {
             </div>
             {project.video && (
               <video
-                src={project.cdnVideo ?? project.video}
+                // @ts-expect-error cannot type
+                src={cdn[project.video]}
                 playsInline
                 autoPlay
                 loop
@@ -89,7 +91,8 @@ function RouteComponent() {
             )}
             {project.image && (
               <img
-                src={project.image}
+                // @ts-expect-error cannot type
+                src={cdn[project.image]}
                 className={`w-full min-h-0 mx-auto flex-1 rounded-xl ${
                   project.noCover ? "" : "object-cover"
                 }`}
@@ -144,7 +147,8 @@ function RouteComponent() {
 
               {selectedProject?.video && (
                 <video
-                  src={selectedProject.cdnVideo ?? selectedProject.video}
+                  // @ts-expect-error cannot type
+                  src={cdn[selectedProject.video]}
                   playsInline
                   autoPlay
                   loop
@@ -155,7 +159,8 @@ function RouteComponent() {
               )}
               {selectedProject?.image && (
                 <img
-                  src={selectedProject.image}
+                  // @ts-expect-error cannot type
+                  src={cdn[selectedProject.image]}
                   className="rounded-xl w-full max-w-none"
                 />
               )}

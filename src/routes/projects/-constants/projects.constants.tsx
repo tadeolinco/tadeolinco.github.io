@@ -14,12 +14,10 @@ export type ProjectType = {
   | {
       image?: never;
       video: string;
-      cdnVideo?: string;
     }
   | {
       image: string;
       video?: never;
-      cdnVideo?: never;
     }
 );
 
@@ -32,9 +30,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 636,
     width: 1280,
-    video: "/videos/portfolio.mp4",
-    cdnVideo:
-      "https://res.cloudinary.com/dtnlx5fjl/video/upload/v1738080889/portfolio_kov6a0.mp4",
+    video: "videos/portfolio.mp4",
     content: (
       <div className="space-y-4">
         <p>
@@ -109,7 +105,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 1293,
     width: 1035,
-    image: "/images/dashboards.jpeg",
+    image: "images/dashboards.jpeg",
   },
   {
     title: "Unravel Carbon - Chart Export",
@@ -119,7 +115,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 457,
     width: 800,
-    video: "/videos/chart-export.mp4",
+    video: "videos/chart-export.mp4",
   },
   {
     title: "Unravel Carbon - Compare Facilities",
@@ -129,7 +125,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 471,
     width: 800,
-    video: "/videos/compare.mp4",
+    video: "videos/compare.mp4",
   },
   {
     title: "Unravel Carbon - Climate Program",
@@ -139,7 +135,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 938,
     width: 2500,
-    image: "/images/climate-program.jpeg",
+    image: "images/climate-program.jpeg",
   },
   {
     title: "Unravel Carbon - Portfolio Module",
@@ -149,7 +145,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 1254,
     width: 2400,
-    video: "/videos/portfolio-module.mp4",
+    video: "videos/portfolio-module.mp4",
   },
   {
     title: "Unravel Carbon - Data upload revamp",
@@ -159,7 +155,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 453,
     width: 800,
-    video: "/videos/data-flow.mp4",
+    video: "videos/data-flow.mp4",
   },
   {
     title: "Unravel Carbon - Data history",
@@ -169,7 +165,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 720,
     width: 1148,
-    video: "/videos/data-history.mp4",
+    video: "videos/data-history.mp4",
   },
   {
     title: "Unravel Carbon - ISSB",
@@ -179,7 +175,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 1280,
     width: 2048,
-    image: "/images/ISSB.webp",
+    image: "images/ISSB.webp",
   },
   {
     title: "Unravel Carbon - Assets Management",
@@ -189,7 +185,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 450,
     width: 800,
-    video: "/videos/assets.mp4",
+    video: "videos/assets.mp4",
   },
   {
     title: "Unravel Carbon - Data export",
@@ -199,7 +195,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 446,
     width: 800,
-    video: "/videos/data-export.mp4",
+    video: "videos/data-export.mp4",
   },
   {
     title: "Unravel Carbon - Audit Trail",
@@ -209,7 +205,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 450,
     width: 800,
-    video: "/videos/audit.mp4",
+    video: "videos/audit.mp4",
   },
   {
     title: "Unravel Carbon - Company Builder",
@@ -219,7 +215,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 456,
     width: 800,
-    video: "/videos/company-builder.mp4",
+    video: "videos/company-builder.mp4",
   },
   {
     title: "Unravel Carbon - Quick Search",
@@ -229,7 +225,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 718,
     width: 1276,
-    video: "/videos/quick-search.mp4",
+    video: "videos/quick-search.mp4",
   },
   {
     title: "Insync",
@@ -239,7 +235,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 689,
     width: 798,
-    video: "/videos/insync.mp4",
+    video: "videos/insync.mp4",
   },
   {
     title: "Gastos",
@@ -249,7 +245,7 @@ export const PROJECTS: ProjectType[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 1080,
     width: 540 / 2,
-    video: "/videos/gastos.mp4",
+    video: "videos/gastos.mp4",
     noCover: true,
   },
 ];
