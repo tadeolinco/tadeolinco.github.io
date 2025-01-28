@@ -1,4 +1,8 @@
-import { createRouter, RouterProvider } from "@tanstack/react-router";
+import {
+  createHashHistory,
+  createRouter,
+  RouterProvider,
+} from "@tanstack/react-router";
 import mixpanel from "mixpanel-browser";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -8,10 +12,10 @@ import "./main.css";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
-// const memoryHistory = createHashHistory({});
+const memoryHistory = createHashHistory({});
 
 // Create a new router instance
-const router = createRouter({ routeTree });
+const router = createRouter({ routeTree, history: memoryHistory });
 
 declare module "@tanstack/react-router" {
   interface Register {
