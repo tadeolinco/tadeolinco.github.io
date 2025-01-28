@@ -62,6 +62,7 @@ export const PosterRow = memo(
                 (!props.stopBlur ? " blur-[2px] hover:blur-0" : "") +
                 (!props.stopGrayscale ? " grayscale hover:grayscale-0" : "")
               }
+              crossOrigin="anonymous"
               onMouseEnter={(event) => {
                 const palette = colorThief.getPalette(
                   event.target as HTMLImageElement,

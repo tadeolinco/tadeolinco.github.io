@@ -44,39 +44,41 @@ export const PROJECTS: ProjectType[] = [
           >
             YouTube clip
           </a>{" "}
-          of the business card scene in American Psycho, so that was a start.
+          of the business card scene in American Psycho. So that was a start.
         </p>
         <p>
           Initially I just had a white version of the center card, and that's
-          it. Played around with some CSS rotations, some gimmick with
+          it. Played around with some CSS rotations, some gimmicks with
           subtitles, but ended up scrapping a lot of the ideas.
         </p>
         <p>
-          Took a break and decided to visit Letterboxd, and found out that I
-          could export my data from there. There it was, a CSV of all my liked
-          films, complete with name and a shortlink to it's Letterboxd film
-          page. And each page had its film poster.
+          Took a break and visited Letterboxd, and found out that I could
+          apparently export my personal data. And there it was, a CSV of all my
+          liked films, complete with names and shortlinks to each of their
+          Letterboxd film pages.
         </p>
         <p>
-          So I built a webscraper using Playwright to automatically get those
-          posters, and made a carousel out of them. Had to hook up a window
-          resize listener to check the number of rows to render.
+          So I built a webscraper using Playwright to automatically get each
+          film's poster from their site. What better way of making your site
+          pretty than using something that's already pretty. Made a carousel à
+          la netflix. Then hook up a window resize listener to check the number
+          of carousels to render.
         </p>
         <p>
-          I got some feedback that the posters were a bit too distractingly
-          pretty, taking away attention from the actual important information
-          (which was me).
+          Got some feedback that the posters were a bit too distractingly
+          pretty, taking away attention from the important information (which
+          was me).
         </p>
         <p>
           Played around with some CSS filters until I got a good combination of
           a minor blur and grayscale. However, that made me sad since the
-          posters warranted some love as well. So its liveliness back on hover.
+          posters warranted some love as well. So I brought back its liveliness
+          on hover (interactivity++)
         </p>
         <p>
-          I wanted a bit more interactivity with site. I wanted them to go back
-          and look at the card while they were playing around with film
-          hovering. Landed with the idea of using the CSS rotations again and
-          using a library (
+          I wanted more though. I needed a reason for them to still go back to
+          the card, as they were film hovering. Landed with the idea of using
+          the CSS rotations again and using a library (
           <a
             href="https://lokeshdhakar.com/projects/color-thief/"
             target="_blank"
@@ -86,6 +88,14 @@ export const PROJECTS: ProjectType[] = [
           </a>
           ) to get the color palette of the film poster, and applying that to
           the card.
+        </p>
+        <p>
+          Main color on the front card, secondary colors for the succeeding
+          cards, and then calculating contrast values to know if the text should
+          be black or white. Then another contrast check among the secondary
+          colors, but now against the chosen text color to use as a accent for
+          the border and my name's shadow. I especially like how it turned out
+          for Old Boy.
         </p>
         <p>
           Heavy insipiration from{" "}
