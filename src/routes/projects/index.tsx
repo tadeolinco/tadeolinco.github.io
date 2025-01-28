@@ -80,6 +80,7 @@ function RouteComponent() {
                 className={`w-full min-h-0 mx-auto flex-1 rounded-xl ${
                   project.noCover ? "" : "object-cover"
                 }`}
+                style={{ height: project.height }}
               />
             )}
             {project.image && (
@@ -88,6 +89,7 @@ function RouteComponent() {
                 className={`w-full min-h-0 mx-auto flex-1 rounded-xl ${
                   project.noCover ? "" : "object-cover"
                 }`}
+                style={{ height: project.height }}
               />
             )}
           </div>
