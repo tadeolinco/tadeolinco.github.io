@@ -73,7 +73,7 @@ export const PROJECTS: ProjectType[] = [
           Played around with some CSS filters until I got a good combination of
           a minor blur and grayscale. However, that made me sad since the
           posters warranted some love as well. So I brought back its liveliness
-          on hover (interactivity++)
+          on hover (interactivity++).
         </p>
         <p>
           I wanted more though. I needed a reason for them to still go back to
