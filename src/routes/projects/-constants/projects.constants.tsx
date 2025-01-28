@@ -14,10 +14,12 @@ export type ProjectType = {
   | {
       image?: never;
       video: string;
+      cdnVideo?: string;
     }
   | {
       image: string;
       video?: never;
+      cdnVideo?: never;
     }
 );
 
@@ -31,6 +33,8 @@ export const PROJECTS: ProjectType[] = [
     height: 636,
     width: 1280,
     video: "/videos/portfolio.mp4",
+    cdnVideo:
+      "https://res.cloudinary.com/dtnlx5fjl/video/upload/v1738080889/portfolio_kov6a0.mp4",
     content: (
       <div className="space-y-4">
         <p>

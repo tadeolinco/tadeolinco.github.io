@@ -71,7 +71,7 @@ function RouteComponent() {
             </div>
             {project.video && (
               <video
-                src={project.video}
+                src={project.cdnVideo ?? project.video}
                 playsInline
                 autoPlay
                 loop
@@ -144,7 +144,7 @@ function RouteComponent() {
 
               {selectedProject?.video && (
                 <video
-                  src={selectedProject.video}
+                  src={selectedProject.cdnVideo ?? selectedProject.video}
                   playsInline
                   autoPlay
                   loop
