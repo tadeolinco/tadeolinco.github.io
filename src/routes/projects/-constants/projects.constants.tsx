@@ -7,6 +7,7 @@ export type ProjectType = {
   description: string;
   technologies: string[];
   height: number;
+  width: number;
   noCover?: boolean;
   content?: ReactNode;
 } & (
@@ -27,7 +28,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Modern portfolio website built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 400,
+    height: 636,
+    width: 1280,
     video: "/videos/portfolio.mp4",
     content: (
       <div className="space-y-4">
@@ -101,7 +103,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboards built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 800,
+    height: 1293,
+    width: 1035,
     image: "/images/dashboards.jpeg",
   },
   {
@@ -110,7 +113,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Export built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 457,
+    width: 800,
     image: "/images/chart-export.gif",
   },
   {
@@ -119,7 +123,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Export built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 471,
+    width: 800,
     image: "/images/compare.gif",
   },
   {
@@ -128,7 +133,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 380,
+    height: 938,
+    width: 2500,
     image: "/images/climate-program.jpeg",
   },
   {
@@ -137,7 +143,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 1254,
+    width: 2400,
     image: "/images/portfolio.gif",
   },
   {
@@ -146,7 +153,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 453,
+    width: 800,
     image: "/images/data-flow.gif",
   },
   {
@@ -155,7 +163,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 720,
+    width: 1148,
     image: "/images/data-history.gif",
   },
   {
@@ -164,7 +173,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 440,
+    height: 1280,
+    width: 2048,
     image: "/images/ISSB.webp",
   },
   {
@@ -173,7 +183,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 450,
+    width: 800,
     image: "/images/assets.gif",
   },
   {
@@ -182,7 +193,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 446,
+    width: 800,
     image: "/images/data-export.gif",
   },
   {
@@ -191,7 +203,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 450,
+    width: 800,
     image: "/images/audit.gif",
   },
   {
@@ -200,7 +213,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 456,
+    width: 800,
     image: "/images/company-builder.gif",
   },
   {
@@ -209,7 +223,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 470,
+    height: 718,
+    width: 1276,
     video: "/videos/quick-search.mp4",
   },
   {
@@ -218,7 +233,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Dashboard built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 575,
+    height: 689,
+    width: 798,
     image: "/images/insync.gif",
   },
   {
@@ -227,7 +243,8 @@ export const PROJECTS: ProjectType[] = [
     endDate: null,
     description: "Modern portfolio website built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    height: 800,
+    height: 1080,
+    width: 540 / 2,
     video: "/videos/gastos.mp4",
     noCover: true,
   },

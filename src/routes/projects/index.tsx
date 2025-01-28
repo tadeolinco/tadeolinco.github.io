@@ -1,4 +1,4 @@
-import { Button, Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import { Button, Dialog, DialogPanel } from "@headlessui/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { PROJECTS, ProjectType } from "./-constants/projects.constants";
@@ -11,16 +11,16 @@ function RouteComponent() {
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(
     null
   );
-
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const [columnCount, setColumnCount] = useState(
-    window.innerWidth >= 992 ? 3 : window.innerWidth >= 768 ? 2 : 1
+    innerWidth >= 992 ? 3 : innerWidth >= 768 ? 2 : 1
   );
-
   useEffect(() => {
     const handleResize = () => {
       setColumnCount(
         window.innerWidth >= 992 ? 3 : window.innerWidth >= 768 ? 2 : 1
       );
+      setInnerWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -57,7 +57,7 @@ function RouteComponent() {
         {projects.map((project) => (
           <div className="border border-neutral-700 flex flex-col bg-neutral-900 rounded-xl p-4 h-fit">
             <div className="flex justify-between mb-4 items-center">
-              <p className="text-lg font-bold">{project.title}</p>
+              <p className="text-sm font-bold">{project.title}</p>
               {project.content && (
                 <div>
                   <Button
@@ -80,7 +80,11 @@ function RouteComponent() {
                 className={`w-full min-h-0 mx-auto flex-1 rounded-xl ${
                   project.noCover ? "" : "object-cover"
                 }`}
-                style={{ height: project.height }}
+                style={{
+                  width: project.width,
+                  // minHeight: project.height,
+                  // maxHeight: project.height,
+                }}
               />
             )}
             {project.image && (
@@ -89,7 +93,11 @@ function RouteComponent() {
                 className={`w-full min-h-0 mx-auto flex-1 rounded-xl ${
                   project.noCover ? "" : "object-cover"
                 }`}
-                style={{ height: project.height }}
+                style={{
+                  width: project.width,
+                  // minHeight: project.height,
+                  // maxHeight: project.height,
+                }}
               />
             )}
           </div>
@@ -116,12 +124,24 @@ function RouteComponent() {
         open={!!selectedProject}
         onClose={() => setSelectedProject(null)}
         transition
-        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4 transition duration-300 ease-out data-[closed]:opacity-0"
+        className="fixed inset-0 flex w-screen items-center justify-center bg-black p-4 transition duration-300 ease-out data-[closed]:opacity-0"
       >
-        <DialogBackdrop className="fixed inset-0 bg-black/75" />
-        <div className="fixed inset-0 flex w-screen items-center justify-center p-20">
-          <DialogPanel className="rounded-2xl max-h-full bg-black flex flex-col lg:flex-row text-white p-8 gap-10">
-            <div className="flex-1 flex items-center min-w-0">
+        {/* <DialogBackdrop className="fixed inset-0 bg-black/75" /> */}
+        <div className="fixed inset-0 flex w-screen items-center justify-center">
+          <DialogPanel className="rounded-2xl max-h-full bg-black flex flex-col lg:flex-row text-white p-8 gap-10 overflow-auto lg:overflow-clip">
+            <div className="flex-1 flex flex-col gap-6 items-start min-w-0">
+              <div className="flex items-center gap-4">
+                <a
+                  role="button"
+                  onClick={() => {
+                    setSelectedProject(null);
+                  }}
+                >
+                  {"<-"}
+                </a>
+                <p className="font-bold text-2xl">{selectedProject?.title}</p>
+              </div>
+
               {selectedProject?.video && (
                 <video
                   src={selectedProject.video}
@@ -140,12 +160,8 @@ function RouteComponent() {
                 />
               )}
             </div>
-
-            <div className="min-w-0 min-h-0 flex flex-1 flex-col">
-              <p className="font-bold text-2xl">{selectedProject?.title}</p>
-              <div className="mt-4 min-h-full overflow-auto">
-                {selectedProject?.content}
-              </div>
+            <div className="min-w-0 flex flex-1 flex-col lg:overflow-auto">
+              {selectedProject?.content}
             </div>
           </DialogPanel>
         </div>
