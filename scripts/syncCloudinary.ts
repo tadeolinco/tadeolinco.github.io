@@ -5,12 +5,14 @@ import fs from "fs";
 dotenv.config();
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD,
+  cloud_name: process.env.VITE_CLOUDINARY_CLOUD,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const posters = fs.readdirSync("public/posters");
+const posters = fs
+  .readdirSync("public/posters")
+  .filter((dir) => !dir.startsWith("."));
 const videos = fs.readdirSync("public/videos");
 const images = fs.readdirSync("public/images");
 
@@ -24,7 +26,7 @@ async function syncFiles() {
     resource_type: "video",
   });
 
-  const resMap: Record<string, boolean> = {};
+  const resMap: Record<string, string> = {};
 
   resImages.resources.forEach((r) => {
     resMap[r.public_id] = r.secure_url;

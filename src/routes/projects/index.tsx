@@ -1,7 +1,8 @@
-import { Button, Dialog, DialogPanel } from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import cdn from "../../cdn.json";
+import { ProjectCard } from "./-components/ProjectCard";
 import { PROJECTS, ProjectType } from "./-constants/projects.constants";
 
 export const Route = createFileRoute("/projects/")({
@@ -56,54 +57,11 @@ function RouteComponent() {
     return (
       <div className="flex flex-1 flex-col gap-4">
         {projects.map((project) => (
-          <div className="border border-neutral-700 flex flex-col bg-neutral-900 rounded-xl p-4 h-fit">
-            <div className="flex justify-between mb-4 items-center">
-              <p className="text-sm font-bold">{project.title}</p>
-              {project.content && (
-                <div>
-                  <Button
-                    className="rounded bg-zinc-600 py-2 px-4 text-sm text-white data-[hover]:bg-zinc-500 data-[active]:bg-zinc-700"
-                    onClick={() => setSelectedProject(project)}
-                  >
-                    Read more
-                  </Button>
-                </div>
-              )}
-            </div>
-            {project.video && (
-              <video
-                // @ts-expect-error cannot type
-                src={cdn[project.video]}
-                playsInline
-                autoPlay
-                loop
-                muted
-                disableRemotePlayback
-                className={`w-full min-h-0 mx-auto flex-1 rounded-xl ${
-                  project.noCover ? "" : "object-cover"
-                }`}
-                style={{
-                  width: project.width,
-                  // minHeight: project.height,
-                  // maxHeight: project.height,
-                }}
-              />
-            )}
-            {project.image && (
-              <img
-                // @ts-expect-error cannot type
-                src={cdn[project.image]}
-                className={`w-full min-h-0 mx-auto flex-1 rounded-xl ${
-                  project.noCover ? "" : "object-cover"
-                }`}
-                style={{
-                  width: project.width,
-                  // minHeight: project.height,
-                  // maxHeight: project.height,
-                }}
-              />
-            )}
-          </div>
+          <ProjectCard
+            key={project.title}
+            project={project}
+            selectProject={setSelectedProject}
+          />
         ))}
       </div>
     );

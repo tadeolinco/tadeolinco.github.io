@@ -8,7 +8,7 @@ export type ProjectType = {
   technologies: string[];
   height: number;
   width: number;
-  noCover?: boolean;
+  widthDivider?: number;
   content?: ReactNode;
 } & (
   | {
@@ -256,8 +256,8 @@ export const PROJECTS: ProjectType[] = [
     description: "Modern portfolio website built with React and TypeScript",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     height: 1080,
-    width: 540 / 2,
+    width: 540,
+    widthDivider: 2,
     video: "videos/gastos.mp4",
-    noCover: true,
   },
 ];
