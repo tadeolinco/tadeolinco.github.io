@@ -278,7 +278,7 @@ export const PROJECTS: ProjectType[] = [
     video: "videos/quick-search.mp4",
   },
   {
-    title: "Insync",
+    title: "Insync - Cloud storage syncing",
     startDate: new Date("2024-01-15"),
     endDate: null,
     description: "Dashboard built with React and TypeScript",
@@ -288,7 +288,7 @@ export const PROJECTS: ProjectType[] = [
     video: "videos/insync.mp4",
   },
   {
-    title: "Gastos",
+    title: "Gastos - Expenses tracker",
     startDate: new Date("2024-01-15"),
     endDate: null,
     description: "Modern portfolio website built with React and TypeScript",
