@@ -136,14 +136,20 @@ function RouteComponent() {
                   loop
                   muted
                   disableRemotePlayback
-                  className="rounded-xl w-full max-w-none"
+                  className="rounded-xl w-full max-w-none min-h-0 self-center"
+                  style={{
+                    width: `${100 / (selectedProject.widthDivider ?? 1)}%`,
+                  }}
                 />
               )}
               {selectedProject?.image && (
                 <img
                   // @ts-expect-error cannot type
                   src={cdn[selectedProject.image]}
-                  className="rounded-xl w-full max-w-none"
+                  className="rounded-xl w-full max-w-none min-h-0 self-center"
+                  style={{
+                    width: `${100 / (selectedProject.widthDivider ?? 1)}%`,
+                  }}
                 />
               )}
             </div>

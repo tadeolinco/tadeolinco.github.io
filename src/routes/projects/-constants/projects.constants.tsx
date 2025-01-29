@@ -297,5 +297,49 @@ export const PROJECTS: ProjectType[] = [
     width: 540,
     widthDivider: 2,
     video: "videos/gastos.mp4",
+    content: (
+      <div className="space-y-4 pb-4">
+        <p>
+          I needed to track my own expenses, and what better way to fix my
+          problems than creating my own app.
+        </p>
+
+        <p>
+          Initially, I tried tracking everything in Google Sheets. The problem
+          there was the UX of inputting new transaction on my phone was that
+          good, and I ended up putting them in once I get home. I then either
+          forgot the things I bought that day, or just forgot to put them in at
+          all.
+        </p>
+
+        <p>
+          Next, I tried YNAB, and other simple budgetting apps. I found out
+          about myself that I didn't really want to budget, which is usually a
+          core functionality of these apps. I just wanted to track where I spend
+          my money, and then get insights from that data.
+        </p>
+
+        <p>
+          So my key takeaways from my previous attempts of being more
+          financially responsible was that first, I priorize the ease of use of
+          putting the data in as quickly and conveniently as possible. Second,
+          no budgets - just straight up tracking. For insights, I can make
+          whatever chart I want later on if I see the use case for it.
+        </p>
+
+        <p>
+          And then a PWA was made using NextJS, vercel for hosting, and supabase
+          as the database. Didn't bother buying a domain since I never planned
+          on letting anyone else use it. When I open it up, it goes directly to
+          the create transcation page, and fills up any information that it can
+          already assume from other settings, like currency, current tags, etc.
+          Entering inputs smartly passes the focus onto the next input, and on
+          and on, until it the next enter would submit the transaction
+          altogether. Afterwards, I put my phone away and forget about it.
+        </p>
+
+        <p>I've been using it since May 2022 now.</p>
+      </div>
+    ),
   },
 ];
