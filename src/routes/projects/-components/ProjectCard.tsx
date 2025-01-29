@@ -2,13 +2,15 @@ import { Button } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import { ProjectType } from "../-constants/projects.constants";
 import cdn from "../../../cdn.json";
+import { getProjectSearchName } from "../../../utils";
+import { Route } from "../index";
 
 type ProjectCardProps = {
   project: ProjectType;
-  selectProject: (project: ProjectType) => void;
 };
 
-export function ProjectCard({ project, selectProject }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
+  const navigate = Route.useNavigate();
   const [container, setContainer] = useState<HTMLDivElement | null>(null);
   const [width, setWidth] = useState<number | null>(null);
 
@@ -33,7 +35,11 @@ export function ProjectCard({ project, selectProject }: ProjectCardProps) {
           <div>
             <Button
               className="rounded bg-zinc-600 py-1 px-2 text-xs text-white data-[hover]:bg-zinc-500 data-[active]:bg-zinc-700"
-              onClick={() => selectProject(project)}
+              onClick={() =>
+                navigate({
+                  search: { name: getProjectSearchName(project.title) },
+                })
+              }
             >
               Read more
             </Button>

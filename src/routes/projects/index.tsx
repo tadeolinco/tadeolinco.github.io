@@ -2,17 +2,45 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import cdn from "../../cdn.json";
+import { getProjectSearchName } from "../../utils";
 import { ProjectCard } from "./-components/ProjectCard";
 import { PROJECTS, ProjectType } from "./-constants/projects.constants";
 
 export const Route = createFileRoute("/projects/")({
   component: RouteComponent,
+  validateSearch: (
+    search: Record<string, unknown>
+  ): {
+    name?: string;
+  } => {
+    return {
+      name:
+        typeof search.name === "string"
+          ? PROJECTS.find(
+              (project) => getProjectSearchName(project.title) === search.name
+            )
+            ? search.name
+            : undefined
+          : undefined,
+    };
+  },
 });
 
 function RouteComponent() {
-  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(
-    null
-  );
+  const { name } = Route.useSearch();
+  const navigate = Route.useNavigate();
+  const selectedProject = name
+    ? PROJECTS.find(
+        (project) => getProjectSearchName(project.title) === name
+      ) || null
+    : null;
+
+  useEffect(() => {
+    if (selectedProject === null && !!name) {
+      navigate({ search: { name: undefined }, replace: true });
+    }
+  }, [name, selectedProject, navigate]);
+
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const [columnCount, setColumnCount] = useState(
     innerWidth >= 992 ? 3 : innerWidth >= 768 ? 2 : 1
@@ -57,11 +85,7 @@ function RouteComponent() {
     return (
       <div className="flex flex-1 flex-col gap-4">
         {projects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            project={project}
-            selectProject={setSelectedProject}
-          />
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     );
@@ -83,19 +107,19 @@ function RouteComponent() {
       </div>
       <Dialog
         open={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={() => navigate({ search: { name: undefined } })}
         transition
         className="fixed inset-0 flex w-screen items-center justify-center bg-black p-4 transition duration-300 ease-out data-[closed]:opacity-0"
       >
         {/* <DialogBackdrop className="fixed inset-0 bg-black/75" /> */}
         <div className="fixed inset-0 flex w-screen items-center justify-center">
-          <DialogPanel className="rounded-2xl max-h-full bg-black flex flex-col lg:flex-row text-white p-8 gap-10 overflow-auto">
+          <DialogPanel className="max-h-full bg-black flex flex-col lg:flex-row text-white p-8 gap-10 overflow-auto">
             <div className="flex-1 flex flex-col gap-6 items-start min-w-0 lg:sticky lg:top-0">
               <div className="flex items-center gap-4">
                 <a
                   role="button"
                   onClick={() => {
-                    setSelectedProject(null);
+                    navigate({ search: { name: undefined } });
                   }}
                 >
                   {"<-"}

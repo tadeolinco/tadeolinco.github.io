@@ -43,3 +43,12 @@ export function findMostContrastingColor(
 
   return mostContrastingColor;
 }
+
+export function getProjectSearchName(title: string) {
+  return title
+    .replace(/[^a-zA-Z0-9\s]/g, "") // Strip all non-alphanumeric characters except spaces
+    .trim() // Remove leading/trailing whitespace
+    .replace(/\s+/g, " ") // Replace multiple spaces with single space
+    .replace(/\s/g, "-") // Replace spaces with dashes
+    .toLowerCase(); // Convert to lowercase
+}
