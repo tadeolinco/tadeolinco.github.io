@@ -128,6 +128,44 @@ export const PROJECTS: ProjectType[] = [
     height: 457,
     width: 800,
     video: "videos/chart-export.mp4",
+    content: (
+      <div className="space-y-4 pb-4">
+        <p>
+          In Unravel Carbon, at this time, we recently incorporated Improvements
+          Week, in where every quarter, we can work on anything we wanted to
+          improve in the platform, be it small quality-of-life improvements or
+          just addressing tech debt.
+        </p>
+
+        <p>
+          Before we do this event, we usually gather feedback from the other
+          teams, not just product and engineering.
+        </p>
+
+        <p>
+          One such feedback was from one of our Sustainability Consultant
+          interns, who wanted a better way of screenshotting the many charts
+          that we have in the platform. Her use case was that when building
+          sustainability reports for our clients, instead of building the chart
+          herself from our exported data, she would just screenshot our charts
+          from the platform straight up. However, this became tedious as it was
+          prone to error and was hard to make the sizes consistent.
+        </p>
+
+        <p>
+          So the team decided take the request in, especially since this didn't
+          need effort from backend side.
+        </p>
+
+        <p>
+          My approach was that I wanted ultimate flexibility for their exports,
+          so I added a bunch of toggles. Don't want to include the chart title?
+          Okay. No borders? Sure. No filters? No problem. Consistent widths? EZ.
+          I even added an optional delay to when the picture snaps just in case
+          they wanted to show a tooltip in the exported image, for example.
+        </p>
+      </div>
+    ),
   },
   {
     title: "Unravel Carbon - Compare Facilities",

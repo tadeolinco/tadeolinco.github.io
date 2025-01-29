@@ -113,7 +113,7 @@ function RouteComponent() {
       >
         {/* <DialogBackdrop className="fixed inset-0 bg-black/75" /> */}
         <div className="fixed inset-0 flex w-screen items-center justify-center">
-          <DialogPanel className="max-h-full bg-black flex flex-col lg:flex-row text-white p-8 gap-10 overflow-auto">
+          <DialogPanel className="max-h-full w-full bg-black flex flex-col lg:flex-row text-white p-8 gap-10 overflow-auto">
             <div className="flex-1 flex flex-col gap-6 items-start min-w-0 lg:sticky lg:top-0">
               <div className="flex items-center gap-4">
                 <a
