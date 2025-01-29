@@ -32,7 +32,7 @@ export const PROJECTS: ProjectType[] = [
     width: 1280,
     video: "videos/portfolio.mp4",
     content: (
-      <div className="space-y-4">
+      <div className="space-y-4 pb-4">
         <p>
           I've always wanted to create a portfolio website, but lacked the
           inspiration for the design. I wanted a gimmick. I like film, and I
@@ -71,14 +71,16 @@ export const PROJECTS: ProjectType[] = [
         </p>
         <p>
           Played around with some CSS filters until I got a good combination of
-          a minor blur and grayscale. However, that made me sad since the
-          posters warranted some love as well. So I brought back its liveliness
-          on hover (interactivity++).
+          blur and grayscale to somewhat make them less eye catching, but with
+          the carousel animation and different posters hopefully providing a
+          nice texture to an otherwise boring site. However, that made me sad
+          since the posters also warranted some love. So I brought back its
+          liveliness on hover (interactivity++).
         </p>
         <p>
           I wanted more though. I needed a reason for them to still go back to
-          the card, as they were film hovering. Landed with the idea of using
-          the CSS rotations again and using a library (
+          the card, as they hovering over the posters. Landed with the idea of
+          using the CSS rotations again and using a library (
           <a
             href="https://lokeshdhakar.com/projects/color-thief/"
             target="_blank"
@@ -90,12 +92,12 @@ export const PROJECTS: ProjectType[] = [
           the card.
         </p>
         <p>
-          Main color on the front card, secondary colors for the succeeding
-          cards, and then calculating contrast values to know if the text should
-          be black or white. Then another contrast check among the secondary
-          colors, but now against the chosen text color to use as a accent for
-          the border and my name's shadow. I especially like how it turned out
-          for Old Boy.
+          Dominant color on the front card, secondary colors for the succeeding
+          cards behind it, then calculating contrast values to know if the text
+          should be black or white. Then another contrast check among the
+          secondary colors, but now against the chosen text color to use as a
+          accent for the border and my name's shadow. I especially like how it
+          turned out for Old Boy.
         </p>
         <p>
           Heavy insipiration from{" "}
