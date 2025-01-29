@@ -4,10 +4,12 @@
 
 #root {
   min-height: 100dvh;
+  background-color: #000;
 }
 
 body {
   font-family: "Fira Code", serif;
+  background-color: #000;
 }
 
 .marquee {
