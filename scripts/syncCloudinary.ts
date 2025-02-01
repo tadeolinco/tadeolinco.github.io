@@ -46,10 +46,14 @@ async function syncFiles() {
         console.log(
           `Uploading poster ${dir} (${i + 1} of ${unsyncedPosters.length})`
         );
-        await cloudinary.uploader.upload(`public/posters/${dir}/poster.jpg`, {
-          public_id: dir,
-          folder: "posters",
-        });
+        const upload = await cloudinary.uploader.upload(
+          `public/posters/${dir}/poster.jpg`,
+          {
+            public_id: dir,
+            folder: "posters",
+          }
+        );
+        resMap[upload.public_id] = upload.secure_url;
       } catch (err) {
         console.log(err);
       }
@@ -67,10 +71,14 @@ async function syncFiles() {
         console.log(
           `Uploading image ${dir} (${i + 1} of ${unsyncedImages.length})`
         );
-        await cloudinary.uploader.upload(`public/images/${dir}`, {
-          public_id: dir,
-          folder: "images",
-        });
+        const upload = await cloudinary.uploader.upload(
+          `public/images/${dir}`,
+          {
+            public_id: dir,
+            folder: "images",
+          }
+        );
+        resMap[upload.public_id] = upload.secure_url;
       } catch (err) {
         console.log(err);
       }
@@ -88,18 +96,26 @@ async function syncFiles() {
         console.log(
           `Uploading video ${vid} (${i + 1} of ${unsyncedVideos.length})`
         );
-        await cloudinary.uploader.upload(`public/videos/${vid}`, {
-          resource_type: "video",
-          public_id: vid,
-          folder: "videos",
-        });
+        const upload = await cloudinary.uploader.upload(
+          `public/videos/${vid}`,
+          {
+            resource_type: "video",
+            public_id: vid,
+            folder: "videos",
+          }
+        );
+        resMap[upload.public_id] = upload.secure_url;
       } catch (err) {
         console.log(err);
       }
     }
   }
 
-  fs.writeFileSync("src/cdn.json", JSON.stringify(resMap, null, 2));
+  const sortedResMap: typeof resMap = {};
+  for (const key of Object.keys(resMap).sort()) {
+    sortedResMap[key] = resMap[key];
+  }
+  fs.writeFileSync("src/cdn.json", JSON.stringify(sortedResMap, null, 2));
 }
 
 // console.log(videos);
