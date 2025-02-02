@@ -9,10 +9,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "convert": "node --experimental-transform-types scripts/convertCSVFilms.ts",
-    "posters": "node --experimental-transform-types scripts/getFilmPosters.ts",
+    "export-data": "node --experimental-transform-types scripts/getFilms.ts",
+    "convert-json": "node --experimental-transform-types scripts/convertCSVFilms.ts",
+    "get-posters": "node --experimental-transform-types scripts/getFilmPosters.ts",
     "sync-cloud": "node --experimental-transform-types scripts/syncCloudinary.ts",
-    "get-posters": "npm run convert && npm run posters && npm run sync-cloud"
+    "sync": "npm run export-data && npm run convert-json && npm run get-posters && npm run sync-cloud"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -41,6 +42,7 @@
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
+    "extract-zip": "^2.0.1",
     "globals": "^15.14.0",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
