@@ -25,7 +25,6 @@ declare module "@tanstack/react-router" {
 
 // Near entry of your product, init Mixpanel
 mixpanel.init("a02956969c6328dac2035bc0fdb1065f", {
-  debug: true,
   track_pageview: true,
   persistence: "localStorage",
 });

@@ -5,6 +5,7 @@ import { PosterBackground } from "../components/PosterBackground";
 import { findMostContrastingColor } from "../utils";
 
 import mixpanel from "mixpanel-browser";
+import { isMobile } from "react-device-detect";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -20,12 +21,16 @@ function RouteComponent() {
   const [thickness, setThickness] = useState(3);
 
   useEffect(() => {
-    const callback = (event: MouseEvent) => {
-      const maxRotation = 25;
+    const maxRotation = 25;
 
+    const mouseCallback = (event: MouseEvent) => {
       const x = event.x;
       const y = event.y;
 
+      handleSetRotations(x, y);
+    };
+
+    const handleSetRotations = (x: number, y: number) => {
       const containerWidth = window.innerWidth;
       const containerHeight = window.innerHeight;
 
@@ -35,10 +40,10 @@ function RouteComponent() {
       });
     };
 
-    window.addEventListener("mousemove", callback);
+    window.addEventListener("mousemove", mouseCallback);
 
     return () => {
-      window.removeEventListener("mousemove", callback);
+      window.removeEventListener("mousemove", mouseCallback);
     };
   }, []);
 
@@ -159,7 +164,10 @@ function RouteComponent() {
       <PosterBackground
         stopBlur={stopBlur}
         stopGrayscale={stopGrayscale}
-        onChangePalette={setPalette}
+        onChangePalette={(s) => {
+          console.log(s);
+          setPalette(s);
+        }}
       />
       {Array.from({ length: thickness }).map((_, index, array) => {
         const color = secondaryColors[(index + 1) % secondaryColors.length];
@@ -170,12 +178,14 @@ function RouteComponent() {
             className="absolute p-4 flex flex-col gap-10 rounded-xl duration-300 ease-in-out border-2 mx-4"
             style={{
               maxWidth: 452,
-              width: "calc(100% - 32px)",
+              width: "calc(100% - 5rem)",
               height: 232,
               transform: `rotateX(${rotations.x * 2}deg) rotateY(${
                 -rotations.y * 2
               }deg) translateZ(${(index + 1) * 10}px)`,
-              transitionProperty: "background-color, border-color",
+              transitionProperty: ["background-color", "border-color"]
+                .concat(isMobile ? ["transform"] : [])
+                .join(", "),
               zIndex: array.length - index,
               boxShadow:
                 array.length - 1 === index
@@ -197,14 +207,16 @@ function RouteComponent() {
         className="p-4 flex duration-300 ease-in-out flex-col gap-10 rounded-xl border-2 mx-4"
         style={{
           maxWidth: 452,
-          width: "calc(100% - 32px)",
+          width: "calc(100% - 5rem)",
           height: 232,
           backgroundColor: `rgb(${palette[0]?.[0]}, ${palette[0]?.[1]}, ${palette[0]?.[2]})`,
           color: `rgb(${textColor[0]}, ${textColor[1]}, ${textColor[2]})`,
           transform: `rotateX(${rotations.x * 2}deg) rotateY(${
             -rotations.y * 2
           }deg)`,
-          transitionProperty: "background-color, color, border-color",
+          transitionProperty: ["background-color", "color", "border-color"]
+            .concat(isMobile ? ["transform"] : [])
+            .join(", "),
           zIndex: 1000,
           borderColor: mostContrastingColor
             ? `rgb(${mostContrastingColor[0]}, ${mostContrastingColor[1]}, ${mostContrastingColor[2]})`

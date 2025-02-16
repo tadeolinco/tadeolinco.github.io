@@ -1,6 +1,7 @@
 import ColorThief from "colorthief";
 import mixpanel from "mixpanel-browser";
 import { memo, useRef } from "react";
+import { isMobile } from "react-device-detect";
 import baseFilms from "../baseFilms.json";
 import cdn from "../cdn.json";
 
@@ -34,6 +35,26 @@ export const PosterRow = memo(
   (props: PosterRowProps) => {
     const films = useRef(shuffleArray(baseFilms));
 
+    const handleChangePalette = (
+      film: (typeof baseFilms)[number],
+      element: HTMLImageElement
+    ) => {
+      const palette = colorThief.getPalette(element, 4);
+      const mainColor = colorThief.getColor(element);
+      if (!palette || palette.length === 0) {
+        props.onChangePalette([[255, 255, 255]]);
+      } else {
+        mixpanel.track("film_hover", {
+          film: film["Name"],
+        });
+        props.onChangePalette(
+          [mainColor].concat(
+            palette.filter((color) => color.every((c, i) => c !== mainColor[i]))
+          )
+        );
+      }
+    };
+
     const renderFilms = films.current
       .slice(props.startIndex)
       .concat(films.current.slice(0, props.startIndex))
@@ -41,17 +62,36 @@ export const PosterRow = memo(
         const uriSplit = film["Letterboxd URI"].split("/");
         const uriSlug = uriSplit[uriSplit.length - 1];
 
+        const Container = isMobile ? "div" : "a";
+
+        const containerProps = isMobile
+          ? {
+              target: "_blank",
+              href: film["Letterboxd URI"],
+            }
+          : {};
+
         return (
-          <a
+          <Container
             key={film["Name"]}
-            target="_blank"
-            href={film["Letterboxd URI"]}
-            className="w-40 block min-w-0 flex-shrink-0 h-60"
+            className="w-40 block min-w-0 flex-shrink-0 h-60 touch-manipulation"
             onClick={() => {
-              mixpanel.track("film_click", {
-                film: film["Name"],
-              });
+              if (!isMobile) {
+                window.open(film["Letterboxd URI"], "_blank");
+                mixpanel.track("film_click", {
+                  film: film["Name"],
+                });
+              }
             }}
+            onDoubleClick={() => {
+              if (isMobile) {
+                mixpanel.track("film_click", {
+                  film: film["Name"],
+                });
+                window.open(film["Letterboxd URI"], "_blank");
+              }
+            }}
+            {...containerProps}
           >
             <img
               // @ts-expect-error cannot type
@@ -63,31 +103,17 @@ export const PosterRow = memo(
                 (!props.stopGrayscale ? " grayscale hover:grayscale-0" : "")
               }
               crossOrigin="anonymous"
-              onMouseEnter={(event) => {
-                const palette = colorThief.getPalette(
-                  event.target as HTMLImageElement,
-                  4
-                );
-                const mainColor = colorThief.getColor(
-                  event.target as HTMLImageElement
-                );
-                if (!palette || palette.length === 0) {
-                  props.onChangePalette([[255, 255, 255]]);
-                } else {
-                  mixpanel.track("film_hover", {
-                    film: film["Name"],
-                  });
-                  props.onChangePalette(
-                    [mainColor].concat(
-                      palette.filter((color) =>
-                        color.every((c, i) => c !== mainColor[i])
-                      )
-                    )
-                  );
-                }
+              // onMouseEnter={(event) => {
+              //   getPalette(film, event.target as HTMLImageElement);
+              // }}
+              onPointerEnter={(event) => {
+                handleChangePalette(film, event.target as HTMLImageElement);
+              }}
+              onPointerDown={(event) => {
+                event.currentTarget.releasePointerCapture(event.pointerId);
               }}
             />
-          </a>
+          </Container>
         );
       });
 
